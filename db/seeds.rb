@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+Sozee.create(sozee_name: "Johnny", )
+Sozee.create(sozee_name: "Bruce Willis")
+Sozee.create(sozee_name: "Jean Francois Placé")

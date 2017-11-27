@@ -1,2 +1,3 @@
 class Sozee < ApplicationRecord
+
 end

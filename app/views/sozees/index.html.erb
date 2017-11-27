@@ -1,0 +1,13 @@
+<div class="container">
+<h3>The sozees</h3>
+  <div class="row">
+    <% @sozees.each do |sozee|  %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card text-center">
+          <%= sozee.sozee_name  %>
+          <%= sozee.description  %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

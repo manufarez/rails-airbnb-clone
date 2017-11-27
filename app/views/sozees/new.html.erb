@@ -1,0 +1,8 @@
+<h1>Deviens un sozee</h1>
+<%= simple_form_for [@sozee] do |f| %>
+  <%= f.input :sozee_name %>
+  <%= f.input :category %>
+  <%= f.input :description %>
+  <%= f.input :price_per_hour %>
+  <%= f.submit "Devenir sozee !", class: "btn btn-primary" %>
+<% end %>

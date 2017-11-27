@@ -1,4 +1,7 @@
 class SozeesController < ApplicationController
+  def  index
+    @sozees = Sozee.all
+  end
 
   def new
     @sozee = Sozee.new

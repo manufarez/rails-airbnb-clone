@@ -1,24 +1,36 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <a href="/" class="navbar-wagon-brand">
-    <img src="images/logo.png" alt="logo">
+    <img src="http://www.espacekid.com/images/Coloriage/670-coloriage-masque-double.gif" alt="logo">
   </a>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Host</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Trips</a>
-    <a href="" class="navbar-wagon-item navbar-wagon-link">Messages</a>
+    <% if user_signed_in? == true %>
+      <li><%= link_to "Devenir sozee", sozees_path %></li>
+    <% else %>
+      <li><%= link_to "Devenir sozee", sozees_path %></li>
+      <li><%= link_to "Connexion", new_user_session_path %></li>
+      <li><%= link_to "Inscription", new_user_registration_path %></li>
+    <% end %>
 
     <!-- Profile picture with dropdown list -->
     <div class="navbar-wagon-item">
       <div class="dropdown">
-        <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+        <% if user_signed_in? == true %>
+          <img src="https://kitt.lewagon.com/placeholder/users/ssaunier" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown">
+        <% else %>
+          <li>"Rien"</li>
+        <% end %>
         <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-          <li><a href="#">Profile</a></li>
-          <li><a href="#">Dashboard</a></li>
-          <li><a href="#">Log Out</a></li>
+          <% if user_signed_in? == true %>
+            <li><%= link_to "Devenir sozee", sozees_path %></li>
+          <% else %>
+            <li><%= link_to "Devenir sozee", sozees_path %></li>
+            <li><%= link_to "Connexion", new_user_session_path %></li>
+            <li><%= link_to "Inscription", new_user_registration_path %></li>
+          <% end %>
         </ul>
       </div>
     </div>

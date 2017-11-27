@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  sozee_name: MyString
+  description: MyString
+  category: MyString
+  price_per_hour: 1
+  user: one
+
+two:
+  sozee_name: MyString
+  description: MyString
+  category: MyString
+  price_per_hour: 1
+  user: two

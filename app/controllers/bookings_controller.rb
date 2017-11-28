@@ -1,12 +1,22 @@
 class BookingsController < ApplicationController
+
+    def new
+      @sozee = Sozee.find(params[:cocktail_id])
+      @user = current_user
+      @booking = Booking.new
+    end
+
+
     def create
-    @booking = Boooking.new(booking_params)
     @sozee = Sozee.find(params[:sozee_id])
+    @user = current_user
+    @booking = Boooking.new(booking_params)
     @booking.sozee = @sozee
+    @booking.user = @user
       if @booking.save
-        redirect_to sozee_path(@sozee)
+        redirect_to sozee_path(@sozee), notice: 'The booking was successfully created.'
       else
-        render 'sozee/show'
+        render :new
       end
     end
 

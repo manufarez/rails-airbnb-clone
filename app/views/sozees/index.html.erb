@@ -1,13 +1,35 @@
 <div class="container">
-<h3>The sozees</h3>
+  <h3>The sozees</h3>
   <div class="row">
     <% @sozees.each do |sozee|  %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card text-center">
-          <%= link_to sozee.sozee_name, sozee_path(sozee) %>
-          <%= sozee.description  %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="index-card">
+            <div class="index-card-content" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path sozee.photo %>')">
+                <div class="city">
+                  <p><i class="fa fa-map-marker" aria-hidden="true"></i></i> <%= sozee.user.city %></p>
+                </div>
+                <div class="card-user-profile-picture">
+                  <p>user profile pic</p>
+                </div>
+                <div class="card-description">
+                  <h2><%= sozee.user.username %></h2>
+                  <p>Sozee de <%= link_to sozee.sozee_name %></p>
+                  <p><%= sozee.description %></p>
+                </div>
+                <div class="price">
+                  <p><i class="fa fa-eur" aria-hidden="true"></i> <%= sozee.price_per_hour %> heure (TTC)</p>
+                </div>
+            </div>
+            <div class="index-card-stats">
+                <ul class="list-inline">
+                  <li><i class="fa fa-map-heart" aria-hidden="true"></li>
+                  <li><i class="fa fa-map-star" aria-hidden="true"></li>
+                  <li><i class="fa fa-map-share" aria-hidden="true"></li>
+                </ul>
+            </div>
+          </div>
         </div>
-      </div>
-    <% end %>
+     <% end %>
   </div>
 </div>
+

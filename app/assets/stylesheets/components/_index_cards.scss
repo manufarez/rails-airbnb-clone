@@ -1,0 +1,73 @@
+.index-card {
+  margin: 0px 5px;                            /* Internal space */
+  border-radius: 4px;                         /* Small radius */
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  border: 1px solid rgba(0, 0, 0, 0.1);       /* OR subtle border */
+  width: 500px;
+}
+
+.index-card-content {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: block;
+  height: 250px;
+}
+
+.index-card-stats {
+  background-size: cover;
+  background-position: center;
+}
+
+.card-category {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 15px;
+  text-transform: uppercase;
+}
+
+.index-card-content > .city {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  height: 20px;
+}
+
+.index-card-content > .card-user-profile-picture {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  height: 30px;
+}
+
+.index-card-content > .card-description {
+  position: absolute;
+  left: 10px;
+  top: 50px;
+  width: 60px;
+}
+
+
+.index-card-content > .price {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  height: 30px;
+}
+
+.index-card-stats > ul {
+  display: inline-block;
+}
+
+.index-card-stats > li {
+  width: 30px;
+  height: 20px;
+}
+
+.index-card-stats > .fa {
+  width: 10px;
+  height: 10px;
+}
+
+

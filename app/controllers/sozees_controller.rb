@@ -3,6 +3,10 @@ class SozeesController < ApplicationController
     @sozees = Sozee.all
   end
 
+  def show
+    @sozee = Sozee.find(params[:id])
+  end
+
   def new
     @sozee = Sozee.new
   end
@@ -20,6 +24,6 @@ class SozeesController < ApplicationController
   private
 
   def sozee_params
-    params.require(:sozee).permit(:sozee_name, :description, :category, :price_per_hour)
+    params.require(:sozee).permit(:sozee_name, :description, :category, :price_per_hour, :user_id)
   end
 end

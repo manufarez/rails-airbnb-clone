@@ -9,6 +9,7 @@ class SozeesController < ApplicationController
 
   def show
     @sozee = Sozee.find(params[:id])
+    @booking = Booking.new
   end
 
   def create

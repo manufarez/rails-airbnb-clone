@@ -20,6 +20,6 @@ class SozeesController < ApplicationController
   private
 
   def sozee_params
-    params.require(:sozee).permit(:sozee_name, :description, :category, :price_per_hour)
+    params.require(:sozee).permit(:sozee_name, :description, :category, :price_per_hour, :photo)
   end
 end

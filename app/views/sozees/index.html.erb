@@ -4,7 +4,7 @@
     <% @sozees.each do |sozee|  %>
       <div class="col-xs-12 col-sm-4">
         <div class="card text-center">
-          <%= sozee.sozee_name  %>
+          <%= link_to sozee.sozee_name, sozee_path(sozee) %>
           <%= sozee.description  %>
         </div>
       </div>

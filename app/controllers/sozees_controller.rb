@@ -10,6 +10,11 @@ class SozeesController < ApplicationController
     @sozee = Sozee.new
   end
 
+  def show
+    @sozee = Sozee.find(params[:id])
+    @booking = Booking.new
+  end
+
   def create
     @sozee = Sozee.new(sozee_params)
     @sozee.user = current_user
@@ -20,8 +25,10 @@ class SozeesController < ApplicationController
     end
   end
 
-  def show
+  def destroy       # DELETE /sozees/:id
     @sozee = Sozee.find(params[:id])
+    @sozee.destroy
+    redirect_to sozees_path
   end
 
   private

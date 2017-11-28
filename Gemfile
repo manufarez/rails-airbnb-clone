@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.3.5'
 
+gem "pundit"
 gem 'carrierwave', '~> 1.2'
 gem 'cloudinary'
 gem 'devise'

@@ -11,6 +11,19 @@
         </div>
       </div>
     </div>
-     <%= render "bookings/new", sozee: @sozee, booking: @booking %>
+    <!-- si visitor -->
+    <% if user_signed_in? == false %>
+      <!-- bouton vers signup -->
+      <h2>Inscrit toi pour booker ce sozee !</h2>
+    <!-- si owner du sozee -->
+    <% elsif @sozee.user_id == @current_user.id %>
+      <!-- TODO find info to display -->
+      <h2>Tu as X demandes en cours</h2>
+    <!-- si j'ai envoyé une demande -->
+      <!-- statut -->
+    <!-- sinon -->
+    <% else %>
+      <%= render "bookings/new", sozee: @sozee, booking: @booking %>
+    <% end %>
   </div>
 </div>

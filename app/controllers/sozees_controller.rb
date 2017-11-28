@@ -1,4 +1,7 @@
 class SozeesController < ApplicationController
+
+  # authorize @sozee
+
   def  index
     @sozees = Sozee.all
   end
@@ -11,11 +14,14 @@ class SozeesController < ApplicationController
     @sozee = Sozee.new(sozee_params)
     @sozee.user = current_user
     if @sozee.save
-    raise
       redirect_to sozee_path(@sozee), notice: 'Your annonce was successfully created.'
     else
       render :new
     end
+  end
+
+  def show
+    @sozee = Sozee.find(params[:id])
   end
 
   private

@@ -4,6 +4,7 @@ class SozeesController < ApplicationController
   end
 
   def show
+    @booking = Booking.new
     @sozee = Sozee.find(params[:id])
   end
 

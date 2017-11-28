@@ -3,17 +3,13 @@ class SozeesController < ApplicationController
     @sozees = Sozee.all
   end
 
-  def show
-    @booking = Booking.new
-    @sozee = Sozee.find(params[:id])
-  end
-
   def new
     @sozee = Sozee.new
   end
 
   def show
     @sozee = Sozee.find(params[:id])
+    @booking = Booking.new
   end
 
   def create

@@ -7,37 +7,37 @@
   // background-position: center;
   color: #616668;
   position: relative;
-  height: 350px;
+
 }
 
 .card-user {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  width: 40px;
-  border-radius: 50%;
+  width: 100%;
 }
 .card-category {
-  position: absolute;
-  top: 10px;
-  left: 10px;
+  // position: absolute;
+  // top: 10px;
+  // left: 10px;
   font-size: 15px;
   text-transform: uppercase;
-  font-size: 24px
-}
-.card-details {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-}
-.card-details h2 {
   font-size: 24px;
 }
-.card-details p {
-  font-size: 14px;
-  opacity: 0.7;
-  font-weight: lighter;
+
+.card-details{
+
 }
+// .card-details {
+//   position: absolute;
+//   bottom: 10px;
+//   left: 10px;
+// }
+// .card-details h2 {
+//   font-size: 24px;
+// }
+// .card-details p {
+//   font-size: 14px;
+//   opacity: 0.7;
+//   font-weight: lighter;
+// }
 .card-link {
   position: absolute;
   top: 0;
@@ -54,5 +54,9 @@
   position: absolute;
   top: 100px;
   left: 10px;
+}
+
+p.sozee-category {
+  margin: 0;
 }
 

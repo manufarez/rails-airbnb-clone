@@ -1,13 +1,22 @@
 <div class="container">
-<h3>The sozees</h3>
+  <h3>The sozees</h3>
   <div class="row">
-    <% @sozees.each do |sozee|  %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="card text-center">
-          <%= link_to sozee.sozee_name, sozee_path(sozee) %>
-          <%= sozee.description  %>
+    <%= @sozees.each do |sozee|  %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_tag sozee.photo, height: 300, width: 400, crop: :fill %>
+              <p>sozee city</p>
+              <div class="card-user-profile-picture">
+                <p>user profile pic</p>
+              </div>
+              <div class="card-description">
+                <h2><%= link_to sozee.sozee_name, sozee_path(sozee) %></h2>
+                <p><%= sozee.description %></p>
+              </div>
+              <p><%= sozee.price_per_hour %></p>
+          </div>
         </div>
-      </div>
-    <% end %>
+     <% end %>
   </div>
 </div>
+
+

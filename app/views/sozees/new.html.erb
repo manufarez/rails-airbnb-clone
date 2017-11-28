@@ -5,10 +5,10 @@
       <h1>Deviens un sozee</h1>
       <%= simple_form_for @sozee do |f| %>
         <%= f.input :sozee_name, input_html: { class: "form-control", required: true }, placeholder: "Jack Sheerac" %>
-        <%= f.input :category, input_html: { class: "form-control", required: true }, placeholder: "Homme politique" %>
+        <%= f.input :category, collection: ["Actrice/Acteur", "Athlète", "Femme/Homme politique", "Journaliste", "Personnage historique", "Star de télévision", "Autres"], input_html: { class: "form-control", required: true }, selected: "Femme/Homme politique" %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
-        <%= f.input :description, placeholder: "7ème et 8ème président de la Vème République, prêt à égayer toutes vos soirées autour d'une bonne tête de veau" %>
+        <%= f.input :description, placeholder: "7ème et 8ème président de la Vème République, prêt à égayer toutes vos soirées autour d'une bonne tête de veau"%>
         <%= f.input :price_per_hour, input_html: { min: '0', step: 'any' }, placeholder: "€ TTC / heure" %>
         <%= f.submit "Devenir sozee !", class: "btn btn-primary" %>
       <% end %>

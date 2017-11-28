@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "http://plaqueperso.e-monsite.com/medias/album/autocollant-sticker-tete-johnny-hallyday.jpg?fx=r_550_550" %>
+    <%= image_tag "logo_sozee.png", class: "logo" %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -10,13 +10,13 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
-      <%= link_to "Devenir sozee", new_sozee_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <a href="/"class = "navbar-wagon-item navbar-wagon-link"><%= current_user.email %></a>
+      <%= link_to "Devenir sozee", new_sozee_path, class: "navbar-wagon-item navbar-wagon-link devenir " %>
+      <!-- <a href="/"class = "navbar-wagon-item navbar-wagon-link"><%= current_user.email %></a> -->
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://www.espacekid.com/images/Coloriage/670-coloriage-masque-double.gif", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <%= image_tag "31097352.jpeg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "#" do %>

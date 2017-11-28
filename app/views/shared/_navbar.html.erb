@@ -1,7 +1,7 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "http://www.espacekid.com/images/Coloriage/670-coloriage-masque-double.gif" %>
+    <%= image_tag "http://plaqueperso.e-monsite.com/medias/album/autocollant-sticker-tete-johnny-hallyday.jpg?fx=r_550_550" %>
   <% end %>
 
   <!-- Right Navigation -->
@@ -38,7 +38,9 @@
       </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Devenir sozee", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_in", default: "Connexion"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to t(".sign_up", default: "Inscription"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
   </div>
 
@@ -49,7 +51,7 @@
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <% if user_signed_in? == true %>
           <li><%= link_to "Devenir sozee", new_sozee_path %></li>
-          <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "Devenir sozee", new_sozee_path %></li>
           <li><%= link_to "Connexion", new_user_session_path %></li>

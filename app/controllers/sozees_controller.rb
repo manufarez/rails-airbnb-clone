@@ -11,6 +11,10 @@ class SozeesController < ApplicationController
     @sozee = Sozee.new
   end
 
+  def show
+    @sozee = Sozee.find(params[:id])
+  end
+
   def create
     @sozee = Sozee.new(sozee_params)
     @sozee.user = current_user
@@ -20,6 +24,21 @@ class SozeesController < ApplicationController
       render :new
     end
   end
+
+  # def edit
+
+  # end
+
+  # def update
+
+  # end
+
+  def destroy       # DELETE /sozees/:id
+    @sozee = Sozee.find(params[:id])
+    @sozee.destroy
+    redirect_to sozees_path
+  end
+
 
   private
 

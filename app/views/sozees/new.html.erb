@@ -4,15 +4,16 @@
 
       <h1>Deviens un sozee</h1>
       <%= simple_form_for @sozee do |f| %>
-        <%= f.input :sozee_name %>
-        <%= f.input :category %>
+        <%= f.input :sozee_name, placeholder: "Jack Sheerac" %>
+        <%= f.input :category, placeholder: "Homme politique" %>
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
-        <%= f.input :description %>
-        <%= f.input :price_per_hour %>
+        <%= f.input :description, placeholder: "7ème et 8ème président de la Vème République, prêt à égayer toutes vos soirées autour d'une bonne tête de veau" %>
+        <%= f.input :price_per_hour, input_html: { min: '0', step: 'any' }, placeholder: "€ TTC / heure" %>
         <%= f.submit "Devenir sozee !", class: "btn btn-primary" %>
       <% end %>
 
     </div>
   </div>
 </div>
+

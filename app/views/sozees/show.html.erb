@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container block">
   <div class="row">
     <div class="col-sm-6">
       <div class="card">
@@ -18,13 +18,13 @@
         <h3><%= link_to "Inscris toi pour booker ce sozee !", new_user_registration_path, class: "btn btn-primary" %> </h3>
         <!-- si owner du sozee -->
       <% elsif @sozee.user_id == @current_user.id %>
-        <h3>Mon profil</h3>
-          <p>Demandes en cours :</p>
+        <h3 class="title-annonce">Mon annonce Sozee</h3>
+          <p class="demande">Demandes en cours :</p>
           <% @sozee.bookings.each do |booking| %>
           <p>Le user id : <%= booking.user_id %> souhaite vous réserver du <%= booking.starts_at %> au <%= booking.ends_at %> <%= link_to "Accepter" %>  <%= link_to "Refuser" %> </p>
           <% end %>
-          <p><%= link_to "Supprimer mon annonce" %></p>
-      <% elsif @current_user.id == @current_user.bookings.last["user_id"] %>
+          <p class="supprimer"><%= link_to "Supprimer mon annonce" %></p>
+      <% elsif @current_user.bookings.size != 0 && @current_user.id == @current_user.bookings.last["user_id"] %>
         <!-- si j'ai envoyé une demande -->
         <h2> Demande de réservation </h2>
         <p>Date : du <%= @current_user.bookings.last.starts_at%> au <%= @current_user.bookings.last.ends_at%> </p>

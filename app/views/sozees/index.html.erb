@@ -11,9 +11,9 @@
                 <div class="card-user-profile-picture">
                   <p>user profile pic</p>
                 </div>
-                <div class="card-description">
                   <h2><%= sozee.user.username %></h2>
-                  <p>Sozee de <%= link_to sozee.sozee_name %></p>
+                  <p><%= link_to sozee.sozee_name, sozee_path(sozee) %></p>
+                <div class="card-description">
                   <p><%= sozee.description %></p>
                 </div>
                 <div class="price">

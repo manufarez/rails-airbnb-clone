@@ -11,14 +11,13 @@
 
       <!-- Links when logged in -->
       <%= link_to "Devenir sozee", new_sozee_path, class: "navbar-wagon-item navbar-wagon-link devenir " %>
-      <!-- <a href="/"class = "navbar-wagon-item navbar-wagon-link"><%= current_user.email %></a> -->
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
           <%= image_tag "31097352.jpeg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li><%= link_to current_user.username, "#" %></li>
+            <li><%= link_to current_user.username, ""%></li>
             <li>
               <%= link_to "" do %>
                 <i class="fa fa-bookmark"></i> <%= t(".profile", default: "Mes réservations") %>

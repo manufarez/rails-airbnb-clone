@@ -1,16 +1,38 @@
-<div class="container show">
+<div class="container">
   <div class="row">
     <div class="col-sm-6">
       <div class="card">
         <%= cl_image_tag @sozee.photo, class: "card-user",  width: 500, height: 350, crop: :fill%>
         <div class="card-details" >
-        <div class="card-category"><%= @sozee.sozee_name %></div>
-        <p class="sozee-category"><%= @sozee.category %></p>
-        <p><%= @sozee.price_per_hour %>€ / h</p>
-        <p class="description"><%= @sozee.description %></p>
-        </div>
+          <div class="card-category"><%= @sozee.user.username %></div>
+            <p class="sozee-category"> Sosie de : <%= @sozee.sozee_name %> Catégorie : <%= @sozee.category.capitalize %> </p>
+            <p><%= @sozee.price_per_hour %>€ / h</p>
+            <p class="description"><%= @sozee.description %></p>
+          </div>
       </div>
     </div>
-     <%= render "bookings/new", sozee: @sozee, booking: @booking %>
+    <!-- TO DO : CSS -->
+    <!-- si visitor -->
+      <% if user_signed_in? == false %>
+        <!-- bouton vers signup -->
+        <h3><%= link_to "Inscris toi pour booker ce sozee !", new_user_registration_path, class: "btn btn-primary" %> </h3>
+        <!-- si owner du sozee -->
+      <% elsif @sozee.user_id == @current_user.id %>
+        <h3>Mon profil</h3>
+          <p>Demandes en cours :</p>
+          <% @sozee.bookings.each do |booking| %>
+          <p>Le user id : <%= booking.user_id %> souhaite vous réserver du <%= booking.starts_at %> au <%= booking.ends_at %> <%= link_to "Accepter" %>  <%= link_to "Refuser" %> </p>
+          <% end %>
+          <p><%= link_to "Supprimer mon annonce" %></p>
+      <% elsif @current_user.id == @current_user.bookings.last["user_id"] %>
+        <!-- si j'ai envoyé une demande -->
+        <h2> Demande de réservation </h2>
+        <p>Date : du <%= @current_user.bookings.last.starts_at%> au <%= @current_user.bookings.last.ends_at%> </p>
+        <p>Statut : en attente d'acceptation du sozee </p>
+        <!-- sinon -->
+      <% else %>
+        <%= render "bookings/new", sozee: @sozee, booking: @booking %>
+      <% end %>
+    </div>
   </div>
 </div>

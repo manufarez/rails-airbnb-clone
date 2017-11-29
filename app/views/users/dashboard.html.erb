@@ -10,8 +10,8 @@
     <!-- mes reservations en tant que user -->
 
 <% else %>
-  <h3>Mon profil user</h3>
-    <p> Demande de réservation (en tant que user) </p>
+  <h3>Mon tableau de bord</h3>
+    <h4> Mes réservations </h4>
       <p>Date : du <%= current_user.bookings.last.starts_at%> au <%= current_user.bookings.last.ends_at%> </p>
       <p>Statut : en attente d'acceptation du sozee </p>
   <% end %>

@@ -18,13 +18,16 @@
         <h3><%= link_to "Inscris toi pour booker ce sozee !", new_user_registration_path, class: "btn btn-primary" %> </h3>
         <!-- si owner du sozee -->
       <% elsif @sozee.user_id == @current_user.id %>
-        <h3>Léonard Messie</h3>
+        <h3>Mon annonce</h3>
           <p><%= link_to "Gérer mes réservations" %></p>
           <p><%= link_to "Editer mon annonce" %></p>
           <p><%= link_to "Supprimer mon annonce" %></p>
         <!-- si j'ai envoyé une demande -->
-      <% elsif @current_user.bookings.size != 0 && @current_user.id == @current_user.bookings.last["user_id"] %>
-        <p><%= link_to "Gérer mes réservations" %></p>
+      <% elsif !@sozee.bookings.where("user_id = ?", current_user.id).empty? %>
+        <h3>Réservation en cours</h3>
+        <p>Date : du <%= @sozee.bookings.where("user_id = ?", current_user.id).last.starts_at%> au <%= @sozee.bookings.where("user_id = ?", current_user.id).last.ends_at%></p>
+        <p>Statut : en attente d'acceptation du sozee </p>
+        <p><%= link_to "Nouvelle réservation"%></p>
         <!-- sinon -->
       <% else %>
         <%= render "bookings/new", sozee: @sozee, booking: @booking %>

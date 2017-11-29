@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      redirect_to sozee_path(@sozee), notice: 'The booking was successfully created.'
+      redirect_to dashboard_path, notice: 'The booking was successfully created.'
     else
       render :new
     end
@@ -29,6 +29,12 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
     authorize @booking
+  end
+
+  def destroy
+    @booking = Booking.find(params[:id])
+    @booking.destroy
+    redirect_to bookings_path
   end
 
   private

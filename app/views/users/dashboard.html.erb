@@ -1,14 +1,17 @@
-</div>
-  <h3>Mon profil</h3>
+<% if @sozee.user_id == @current_user.id %>
+  <h3>Mon profil Sozee</h3>
     <!-- mes reservations en tant que sozee -->
-    <p>Demandes entrantes (en tant que sozee) </p>
-    <% @sozee.bookings.each do |booking| %>
-    <p>Le user id : <%= booking.user_id %> souhaite vous réserver du <%= booking.starts_at %> au <%= booking.ends_at %> <%= link_to "Accepter" %>  <%= link_to "Refuser" %> </p>
-    <% end %>
+    <p>Demandes en cours :</p>
+      <% @sozee.bookings.each do |booking| %>
+      <p><%= booking.user.username%> souhaite vous réserver du <%= booking.starts_at %> au <%= booking.ends_at %> <%= link_to "Accepter" %>  <%= link_to "Refuser" %> </p>
+  <% end %>
     <p><%= link_to "Supprimer mon annonce" %></p>
 
     <!-- mes reservations en tant que user -->
-    <h2> Demandes de réservation (en tant que user) </h2>
-    <p>Date : du <%= @current_user.bookings.last.starts_at%> au <%= @current_user.bookings.last.ends_at%> </p>
-    <p>Statut : en attente d'acceptation du sozee </p>
-</div>
+
+<% else @current_user.bookings.size != 0 %>
+  <h3>Mon profil user</h3>
+    <p> Demande de réservation (en tant que user) </p>
+      <p>Date : du <%= @current_user.bookings.last.starts_at%> au <%= @current_user.bookings.last.ends_at%> </p>
+      <p>Statut : en attente d'acceptation du sozee </p>
+  <% end %>

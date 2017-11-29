@@ -21,11 +21,13 @@
         <h3 class="title-annonce">Mon annonce Sozee</h3>
           <p class="demande">Demandes en cours :</p>
           <% @sozee.bookings.each do |booking| %>
-          <p>Le user id : <%= booking.user_id %> souhaite vous réserver du <%= booking.starts_at %> au <%= booking.ends_at %> <%= link_to "Accepter" %>  <%= link_to "Refuser" %> </p>
+          <p><%= booking.user.username%> souhaite vous réserver du <%= booking.starts_at %> au <%= booking.ends_at %> <%= link_to "Accepter" %>  <%= link_to "Refuser" %> </p>
           <% end %>
           <p class="supprimer"><%= link_to "Supprimer mon annonce" %></p>
       <% elsif @current_user.bookings.size != 0 && @current_user.id == @current_user.bookings.last["user_id"] %>
+          <p><%= link_to "Supprimer mon annonce" %></p>
         <!-- si j'ai envoyé une demande -->
+      <% elsif @current_user.bookings.size != 0 && @current_user.id == @current_user.bookings.last["user_id"] %>
         <h2> Demande de réservation </h2>
         <p>Date : du <%= @current_user.bookings.last.starts_at%> au <%= @current_user.bookings.last.ends_at%> </p>
         <p>Statut : en attente d'acceptation du sozee </p>

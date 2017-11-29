@@ -7,7 +7,6 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
-
   def create
     @sozee = Sozee.find(params[:sozee_id])
     @booking = Booking.new(booking_params)
@@ -21,9 +20,20 @@ class BookingsController < ApplicationController
     end
   end
 
+  def edit
+    @booking = booking.find(params[:id])
+    authorize @booking
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+    authorize @booking
+  end
+
   private
 
   def booking_params
-    params.require(:booking).permit(:sozee_id, :user_id, :location, :starts_at, :ends_at)
+    params.require(:booking).permit(:sozee_id, :user_id, :location, :starts_at, :ends_at, :status)
   end
 end

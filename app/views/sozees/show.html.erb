@@ -24,7 +24,7 @@
           <p>Le user id : <%= booking.user_id %> souhaite vous réserver du <%= booking.starts_at %> au <%= booking.ends_at %> <%= link_to "Accepter" %>  <%= link_to "Refuser" %> </p>
           <% end %>
           <p><%= link_to "Supprimer mon annonce" %></p>
-      <% elsif @current_user.id == @current_user.bookings.last["user_id"] %>
+      <% elsif @current_user.bookings.size != 0 && @current_user.id == @current_user.bookings.last["user_id"] %>
         <!-- si j'ai envoyé une demande -->
         <h2> Demande de réservation </h2>
         <p>Date : du <%= @current_user.bookings.last.starts_at%> au <%= @current_user.bookings.last.ends_at%> </p>

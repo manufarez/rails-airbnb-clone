@@ -1,13 +1,12 @@
+<div class="col-sm-6">
+  <div class="booking">
 
-    <div class="col-sm-6">
-      <div class="booking">
+  <%= simple_form_for ([ sozee, booking ]) do |f| %>
+    <%= f.input :location, class: "location" %>
+    <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
+    <%= f.submit "Book this sozee !", class: "bouton" %>
+  <% end %>
+  </div>
 
-      <%= simple_form_for ([ sozee, booking ]) do |f| %>
-        <%= f.input :location %>
-        <%= f.input :starts_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.input :ends_at, as: :string, required: false, input_html: {class: "datepicker"} %>
-        <%= f.submit "Book this sozee !", class: "bouton" %>
-      <% end %>
-      </div>
-
-    </div>
+</div>

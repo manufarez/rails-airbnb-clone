@@ -51,16 +51,7 @@ p {
 p.description{
   padding-bottom: 15px;
 }
-.card-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index: 2;
-  background: black;
-  opacity: 0;
-}
+
 
 .card-description p {
   font-size: 18px;
@@ -76,10 +67,5 @@ p.sozee-category {
   opacity: 0.6;
 }
 
-.bouton {
-  color: white;
-  padding: 10px;
-  background-color: #6279F4;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
-}
+
 

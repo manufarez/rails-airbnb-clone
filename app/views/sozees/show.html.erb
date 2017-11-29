@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container block">
   <div class="row">
     <div class="col-sm-6">
       <div class="card">
@@ -18,9 +18,11 @@
         <h3><%= link_to "Inscris toi pour booker ce sozee !", new_user_registration_path, class: "btn btn-primary" %> </h3>
         <!-- si owner du sozee -->
       <% elsif @sozee.user_id == @current_user.id %>
+
         <h3>Mon annonce</h3>
-          <p><%= link_to "Gérer mes réservations" %></p>
+          <p><%= link_to "Gérer mes réservations", dashboard_path %></p>
           <p><%= link_to "Editer mon annonce" %></p>
+
           <p><%= link_to "Supprimer mon annonce" %></p>
         <!-- si j'ai envoyé une demande -->
       <% elsif !@sozee.bookings.where("user_id = ?", current_user.id).empty? %>

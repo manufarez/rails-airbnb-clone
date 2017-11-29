@@ -1,41 +1,29 @@
-<div class="container">
-  <h3>Sozees</h3>
+<div class="container center">
+  <div class="center-text"><h3>Les Sozees disponibles</h3>
+  </div>
   <div class="row">
-    <% @sozees.each do |sozee|  %>
-        <div class="col-xs-12 col-sm-6">
-
-
-          <div class="index-card">
-            <div class="index-card-content" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path sozee.photo %>')">
-
-                <div class="city">
-                  <p><i class="fa fa-map-marker" aria-hidden="true"></i> <%= sozee.user.city %></p>
-                </div>
-                <div class="card-description">
-                  <div class="name-sozee">
-                    <h2>Sozee de <%= sozee.sozee_name %></h2>
-                    <p><%= sozee.user.username %></p>
-                  </div>
-                    <%= sozee.description %>
-                  <div class="price">
-                    <p><i class="fa fa-eur" aria-hidden="true"></i> <%= sozee.price_per_hour %>/h</p>
-                  </div>
-                </div>
-              <%= link_to "", sozee_path(sozee), class: "full-card-link" %>
-            </div>
-
-
-            <div class="index-card-stats">
-                <ul class="list-inline">
-                  <li><i class="fa fa-heart i-stats" aria-hidden="true"></i></li>
-                  <li><i class="fa fa-star i-stats" aria-hidden="true"></i></li>
-                  <li><i class="fa fa-share i-stats" aria-hidden="true"></i></li>
-                </ul>
-            </div>
+    <% @sozees.each do |sozee| %>
+    <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="main-card-index">
+       <div class="card-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path sozee.photo %>')";>
+        <div class="card-category-index"><%= sozee.user.city %></div>
+        </div>
+        <div class="card-info-index">
+          <div class="card-description-index">
+            <h2><%= sozee.sozee_name %></h2>
+            <p><%= sozee.user.username %></p>
+          </div>
+          <div class="price">
+            <p><%=sozee.category%></p>
+            <p><i class="fa fa-eur" aria-hidden="true"></i> <%= sozee.price_per_hour %>/h</p>
+            <%= link_to "", sozee_path(sozee), class: "full-card-link" %>
           </div>
         </div>
-     <% end %>
+      <!-- <a class="card-link-index" href="#" ></a> -->
+    </div>
   </div>
+  <% end %>
+</div>
 </div>
 
 

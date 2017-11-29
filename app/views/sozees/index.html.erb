@@ -11,14 +11,13 @@
                 </div>
                 <div class="card-description">
                   <div class="name-sozee">
-                    <h2>Sozee de<%= sozee.sozee_name %></h2>
-                    <p><%= booking.user.username %></p>
+                    <h2>Sozee de <%= sozee.sozee_name %></h2>
+                    <p><%= sozee.user.username %></p>
                   </div>
                     <%= sozee.description %>
                   <div class="price">
                     <p><i class="fa fa-eur" aria-hidden="true"></i> <%= sozee.price_per_hour %>/h</p>
                   </div>
-                  <p><%= sozee.description %></p>
                 </div>
 
             </div>

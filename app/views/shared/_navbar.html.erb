@@ -19,8 +19,8 @@
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li><%= link_to current_user.username, ""%></li>
             <li>
-              <%= link_to "" do %>
-                <i class="fa fa-bookmark"></i> <%= t(".profile", default: "Mes réservations") %>
+              <%= link_to dashboard_path do %>
+                <i class="fa fa-user"></i> <%= t(".profile", default: "Mon tableau de bord") %>
               <% end %>
             </li>
             <li>

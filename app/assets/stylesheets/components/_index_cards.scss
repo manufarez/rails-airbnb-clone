@@ -13,6 +13,10 @@
   width: 200px;
 }
 
+.index-card-content:hover {
+
+}
+
 .index-card-content {
   background-size: cover;
   background-position: center;
@@ -37,7 +41,6 @@
 
 .index-card-content > .city {
   position: absolute;
-  left: 10px;
   top: 10px;
   height: 20px;
 }
@@ -52,18 +55,23 @@
 .card-description {
   display: inline-block;
   position: absolute;
-  left: 10px;
-  bottom: 10px;
-  width: 80%;
+  left: 0px;
+  bottom: 0px;
+  width: 100%;
   margin-left: 0px;
+  padding: 10px 0px;
+  background-color: rgba(0,0,0,0.3)
 }
 
 .card-description h2, .card-description a, .card-description p {
   position: relative;
+  width: 90%;
   padding: 0px;
   top: 0px;
-  left: 0px;
+  left: 10px;
   margin: 0px;
+  padding-bottom: 2px;
+  color: rgba(250, 250, 250, 0.8)
 }
 
 .card-description h2 {
@@ -75,12 +83,23 @@
   font-size: 12px;
 }
 
-.index-card-content > .price {
+.index-card-content .price {
   position: absolute;
   right: 10px;
   bottom: 10px;
   height: 30px;
+  width: 60px;
+  align-items: center;
 }
+
+.index-card-content .price {
+  position: absolute;
+  right: 10px;
+  bottom: 0px;
+}
+
+
+
 
 ////////
 

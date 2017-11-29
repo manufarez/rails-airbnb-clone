@@ -3,11 +3,13 @@
   <div class="row">
     <% @sozees.each do |sozee|  %>
         <div class="col-xs-12 col-sm-6">
+
+
           <div class="index-card">
             <div class="index-card-content" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path sozee.photo %>')">
 
                 <div class="city">
-                  <p><i class="fa fa-map-marker" aria-hidden="true"></i><%= sozee.user.city %></p>
+                  <p><i class="fa fa-map-marker" aria-hidden="true"></i> <%= sozee.user.city %></p>
                 </div>
                 <div class="card-description">
                   <div class="name-sozee">
@@ -19,6 +21,7 @@
                     <p><i class="fa fa-eur" aria-hidden="true"></i> <%= sozee.price_per_hour %>/h</p>
                   </div>
                 </div>
+              <%= link_to "", sozee_path(sozee), class: "full-card-link" %>
             </div>
 
 
@@ -29,7 +32,6 @@
                   <li><i class="fa fa-share i-stats" aria-hidden="true"></i></li>
                 </ul>
             </div>
-
           </div>
         </div>
      <% end %>

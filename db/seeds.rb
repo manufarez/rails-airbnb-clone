@@ -50,15 +50,15 @@ user9.save
 user10.save
 
 puts "creating sozees..."
-sozee1 = Sozee.new(sozee_of: "François Hollande", sozee_name: "Hollandus", description: "Parce qu'il faut toujours un représentant politique dans vos cocktails dinatoires", category: "Politique", price_per_hour: 100, user: user1, latitude: 37.4238253802915, longitude: -122.0829009197085 )
-sozee2 = Sozee.new(sozee_of: "Johnny Hallyday", sozee_name: "Jojo le routard", description: "Ah que je t'aime, voix parfaite", category: "Chanteur", price_per_hour: 10, user: user2, latitude: 37.4238253802915, longitude: -122.0829009197085 )
-sozee3 = Sozee.new(sozee_of: "Fabien Barthez", sozee_name: "Nicolas", description: "Prêt à mettre de l'action dans vos soirées !", category: "Acteur", price_per_hour: 20, user: user3, latitude: 37.4238253802915, longitude: -122.0829009197085 )
-sozee4 = Sozee.new(sozee_of: "Céline Dion", sozee_name: "Céline la matrone", description: "blablablaaaaa bla bla blaaa blaaaaa", category: "Chanteur", price_per_hour: 1000, user: user4, latitude: 37.4238253802915, longitude: -122.0829009197085 )
-sozee5 = Sozee.new(sozee_of: "Stromae", sozee_name: "Stromi le sosie", description: "blablablaaaaa bla bla blaaa blaaaaa alors on danse", category: "Politique", price_per_hour: 100, user: user5, latitude: 37.4238253802915, longitude: -122.0829009197085 )
-sozee6 = Sozee.new(sozee_of: "Emmanuel Macron", sozee_name: "Micron", description: "C'est de la poudre de perlinpinpin", category: "Politique", price_per_hour: 1500, user: user6, latitude: 37.4238253802915, longitude: -122.0829009197085 )
-sozee7 = Sozee.new(sozee_of: "Jean-Vincent Placé", sozee_name: "Emmanuel", description: "Prêt à mettre de l'action dans vos soirées... ", category: "Acteur", price_per_hour: 20, user: user7, latitude: 37.4238253802915, longitude: -122.0829009197085 )
-sozee8 = Sozee.new(sozee_of: "Brigitte Macron", sozee_name: "Bribri", description: "blablablaaaaa bla bla blaaa blaaaaa", category: "Première Dame", price_per_hour: 7900, user: user8, latitude: 37.4238253802915, longitude: -122.0829009197085 )
-sozee9 = Sozee.new(sozee_of: "Booked_sozee", sozee_name:"Jesuisbooképar:no_booking_user", description: "blablablaaaaa bla bla blaaa blaaaaa", category: "Première Dame", price_per_hour: 7900, user: user9, latitude: 37.4238253802915, longitude: -122.0829009197085 )
+sozee1 = Sozee.new(sozee_of: "François Hollande", sozee_name: "Hollandus", description: "Parce qu'il faut toujours un représentant politique dans vos cocktails dinatoires", category: "Politique", price_per_hour: 100, user: user1, latitude: 48.870299, longitude: 2.389295 )
+sozee2 = Sozee.new(sozee_of: "Johnny Hallyday", sozee_name: "Jojo le routard", description: "Ah que je t'aime, voix parfaite", category: "Chanteur", price_per_hour: 10, user: user2, latitude: 48.865032, longitude: 2.379843 )
+sozee3 = Sozee.new(sozee_of: "Fabien Barthez", sozee_name: "Nicolas", description: "Prêt à mettre de l'action dans vos soirées !", category: "Acteur", price_per_hour: 20, user: user3, latitude: 48.870620, longitude: 2.316765 )
+sozee4 = Sozee.new(sozee_of: "Céline Dion", sozee_name: "Céline la matrone", description: "blablablaaaaa bla bla blaaa blaaaaa", category: "Chanteur", price_per_hour: 1000, user: user4, latitude: 48.870764, longitude: 2.347361 )
+sozee5 = Sozee.new(sozee_of: "Stromae", sozee_name: "Stromi le sosie", description: "blablablaaaaa bla bla blaaa blaaaaa alors on danse", category: "Politique", price_per_hour: 100, user: user5, latitude: 48.843295, longitude: 2.326514 )
+sozee6 = Sozee.new(sozee_of: "Emmanuel Macron", sozee_name: "Micron", description: "C'est de la poudre de perlinpinpin", category: "Politique", price_per_hour: 1500, user: user6, latitude: 48.831118, longitude: 2.354568 )
+sozee7 = Sozee.new(sozee_of: "Jean-Vincent Placé", sozee_name: "Emmanuel", description: "Prêt à mettre de l'action dans vos soirées... ", category: "Acteur", price_per_hour: 20, user: user7, latitude: 48.885906, longitude: 2.294265 )
+sozee8 = Sozee.new(sozee_of: "Brigitte Macron", sozee_name: "Bribri", description: "blablablaaaaa bla bla blaaa blaaaaa", category: "Première Dame", price_per_hour: 7900, user: user8, latitude: 48.838736, longitude: 2.378595 )
+sozee9 = Sozee.new(sozee_of: "Booked_sozee", sozee_name:"Jesuisbooképar:no_booking_user", description: "blablablaaaaa bla bla blaaa blaaaaa", category: "Première Dame", price_per_hour: 7900, user: user9, latitude: 48.899085, longitude: 2.359328 )
 
 puts "adding photos to sozees..."
 sozee1.remote_photo_url = 'http://www.sosiestar.com/wp-content/uploads/2015/07/sosie-metisse-de-francois-hollande.jpg'

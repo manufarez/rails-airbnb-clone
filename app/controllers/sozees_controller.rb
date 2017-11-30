@@ -1,8 +1,18 @@
 class SozeesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
-  def  index
-    @sozees = Sozee.all
+  def index
+    if params[:query].present?
+      sql_query = " \
+        sozees.sozee_name @@ :query \
+        OR sozees.category @@ :query \
+        OR users.username @@ :query \
+        OR users.city @@ :query \
+      "
+      @sozees = Sozee.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @sozees = Sozee.all
+    end
   end
 
   def new

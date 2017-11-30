@@ -1,4 +1,13 @@
 <div class="container center">
+  <!-- Search -->
+  <%= form_tag sozees_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a sozee"
+  %>
+<% end %>
+  <!--  -->
   <div class="center-text"><h3>Les Sozees disponibles</h3>
   </div>
   <div class="row">

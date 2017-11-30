@@ -29,6 +29,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
     authorize @booking
+    redirect_to dashboard_path, notice: 'The booking was successfully updated.'
   end
 
   def destroy

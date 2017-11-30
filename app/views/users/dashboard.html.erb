@@ -5,11 +5,21 @@
       <!-- <User> souhaite vous réserver du <> au <> -->
       <% current_user.sozees.first.bookings.each do |booking| %>
         <p><%= booking.user.username%> souhaite vous réserver du <%= booking.starts_at %> au <%= booking.ends_at %>
-          <!-- Donner la possibilité d'accepter ou de refuser une demande -->
-          <%= link_to "Accepter" %>
-          <%= link_to "Refuser", sozee_booking_path(booking.sozee_id, booking),
-          method: :delete,
-          data: { confirm: "Are you sure?" } %>
+        <!-- Donner la possibilité d'accepter ou de refuser une demande -->
+
+        <%= simple_form_for [current_user.sozees.first, booking] do |f| %>
+           <%= f.input :status, as: :hidden, input_html: { value: "Acceptée" } %>
+          <%= f.button :submit, 'Accepter' %>
+        <% end %>
+
+        <%= simple_form_for [current_user.sozees.first, booking] do |f| %>
+           <%= f.input :status, as: :hidden, input_html: { value: "Refusée" } %>
+          <%= f.button :submit, 'Refuser' %>
+        <% end %>
+
+        <%= link_to "Supprimer la demande", sozee_booking_path(booking.sozee_id, booking),
+        method: :delete,
+        data: { confirm: "Are you sure?" } %>
         </p>
       <% end %>
     <!-- Donner la possibilité de supprimer son profil de Sozee -->
@@ -20,6 +30,6 @@
 <% else %>
   <h3>Mon tableau de bord</h3>
     <h4> Mes réservations </h4>
-      <p>Date : du <%= current_user.bookings.last.starts_at%> au <%= current_user.bookings.last.ends_at%> </p>
-      <p>Statut : en attente d'acceptation du sozee </p>
+     <!--  <p>Date : du <%= current_user.bookings.last.starts_at%> au <%= current_user.bookings.last.ends_at%> </p>
+      <p>Statut : en attente d'acceptation du sozee </p> -->
   <% end %>

@@ -14,16 +14,16 @@ puts "remove users"
 User.destroy_all
 
 puts "creating users..."
-user1 = User.create(username: "Hollandus", city: "Paris", email: "manuel.farez@gmail.com", password: "mflewagon")
-user2 = User.create(username: "Jojo le routard", city: "Montpellier", email: "joffrey.cazalbou@gmail.com", password: "jclewagon")
-user3 = User.create(username: "Nicolas", city: "Paris", email: "nicolas.lizop@gmail.com", password: "nzlewagon")
-user4 = User.create(username: "Céline la matrone", city: "Tours", email: "francis.berger@gmail.com", password: "fblewagon")
-user5 = User.create(username: "Stromi le sosie", city: "Paris", email: "random.random@gmail.com", password: "rrlewagon")
-user6 = User.create(username: "Micron", city: "Paris", email: "random1.random1@gmail.com", password: "rr1lewagon")
-user7 = User.create(username: "Emmanuel", city: "Paris", email: "Emmanuel.random@gmail.com", password: "rrlewagon")
-user8 = User.create(username: "Brigitte Macron", city: "Paris", email: "Brigitte.random@gmail.com", password: "rrlewagon")
-user9 = User.create(username: "no_booking_user", city: "Paris", email: "nbu@gmail.com", password: "nbu")
-user10 = User.create(username: "booking_user", city: "Paris", email: "bu@gmail.com", password: "bu")
+user1 = User.new(username: "Hollandus", city: "Paris", email: "manuel.farez@gmail.com", password: "mflewagon")
+user2 = User.new(username: "Jojo le routard", city: "Montpellier", email: "joffrey.cazalbou@gmail.com", password: "jclewagon")
+user3 = User.new(username: "Nicolas", city: "Paris", email: "nicolas.lizop@gmail.com", password: "nzlewagon")
+user4 = User.new(username: "Céline la matrone", city: "Tours", email: "francis.berger@gmail.com", password: "fblewagon")
+user5 = User.new(username: "Stromi le sosie", city: "Paris", email: "random.random@gmail.com", password: "rrlewagon")
+user6 = User.new(username: "Micron", city: "Paris", email: "random1.random1@gmail.com", password: "rr1lewagon")
+user7 = User.new(username: "Emmanuel", city: "Paris", email: "Emmanuel.random@gmail.com", password: "rrlewagon")
+user8 = User.new(username: "Brigitte Macron", city: "Paris", email: "Brigitte.random@gmail.com", password: "rrlewagon")
+user9 = User.new(username: "no_booking_user", city: "Paris", email: "nbu@gmail.com", password: "nnnnnnn")
+user10 = User.new(username: "booking_user", city: "Paris", email: "bu@gmail.com", password: "uuuuuuu")
 
 puts "adding photos to users..."
 user1.remote_photo_url = 'https://www.google.fr/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwiggou4uebXAhXrAcAKHZrhBK8QjBwIBA&url=https%3A%2F%2Fwww.shareicon.net%2Fdownload%2F2016%2F09%2F01%2F822711_user_512x512.png&psig=AOvVaw34yIMkraE4A46itKBY8OSA&ust=1512136463748400'

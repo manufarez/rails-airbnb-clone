@@ -11,8 +11,7 @@ class SozeesController < ApplicationController
       "
       @sozees = Sozee.joins(:user).where(sql_query, query: "%#{params[:query]}%")
     else
-      @sozees = Sozee.all
-      #@sozees = Sozee.where.not(latitude: nil, longitude: nil)
+      @sozees = Sozee.where.not(latitude: nil, longitude: nil)
     end
     @markers = @sozees.map do |sozee|
       {

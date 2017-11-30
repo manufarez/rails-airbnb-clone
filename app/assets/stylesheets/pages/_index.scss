@@ -2,18 +2,21 @@
 @import "home";
 
 .center{
+  display: flex;
   background-color: white;
-  margin: 100px 0;
+  margin: 40px;
   border-radius: 5px;
-  padding: 1px 50px 30px 50px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1px 20px 30px 20px;
+  // box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .center-text {
   text-align: center;
-  margin: 30px 0;
+  margin: 90px 0px 0px 0;
 }
 
-.search {
-  margin: 30px 30px;
+.search-form{
+  width: 75%;
+  margin: 30px 0 30px 15px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
 }

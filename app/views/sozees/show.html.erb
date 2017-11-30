@@ -4,8 +4,8 @@
       <div class="card">
         <%= cl_image_tag @sozee.photo, class: "card-user",  width: 500, height: 350, crop: :fill%>
         <div class="card-details" >
-          <div class="card-category"><%= @sozee.user.username %></div>
-            <p class="sozee-category"> Sosie de : <%= @sozee.sozee_name %> Catégorie : <%= @sozee.category.capitalize %> </p>
+          <div class="card-category"><%= @sozee.sozee_name %></div>
+            <p class="sozee-category"> Sosie de : <%= @sozee.sozee_of %> Catégorie : <%= @sozee.category.capitalize %> </p>
             <p><%= @sozee.price_per_hour %>€ / h</p>
             <p class="description"><%= @sozee.description %></p>
           </div>

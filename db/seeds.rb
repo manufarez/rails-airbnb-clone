@@ -12,7 +12,8 @@ puts "remove sozees"
 Sozee.destroy_all
 puts "remove users"
 User.destroy_all
-puts "creating users ..."
+puts "creating users..."
+
 user1 = User.create(username: "Hollandus", city: "Paris", email: "manuel.farez@gmail.com", password: "mflewagon" )
 user2 = User.create(username: "Jojo le routard", city: "Montpellier", email: "joffrey.cazalbou@gmail.com", password: "jclewagon" )
 user3 = User.create(username: "Nicolas", city: "Paris", email: "nicolas.lizop@gmail.com", password: "nzlewagon" )
@@ -22,7 +23,7 @@ user6 = User.create(username: "Micron", city: "Paris", email: "random1.random1@g
 user7 = User.create(username: "Emmanuel", city: "Paris", email: "Emmanuel.random@gmail.com", password: "rrlewagon" )
 user8 = User.create(username: "Brigitte Macron", city: "Paris", email: "Brigitte.random@gmail.com", password: "rrlewagon" )
 
-puts "adding photos to users ..."
+puts "adding photos to users..."
 user1.remote_photo_url = 'https://www.google.fr/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwiggou4uebXAhXrAcAKHZrhBK8QjBwIBA&url=https%3A%2F%2Fwww.shareicon.net%2Fdownload%2F2016%2F09%2F01%2F822711_user_512x512.png&psig=AOvVaw34yIMkraE4A46itKBY8OSA&ust=1512136463748400'
 user2.remote_photo_url = 'https://img2.telestar.fr/var/telestar/storage/images/media/images/2014/photos/johnny-hallyday/hallyday_013/203099-1-fre-FR/hallyday_013_width1024.jpg'
 user3.remote_photo_url = 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/5/000/1aa/260/3e293d1.jpg'
@@ -32,17 +33,17 @@ user6.remote_photo_url = 'https://www.francetvinfo.fr/image/75e5y9n5e-6c18/578/5
 user7.remote_photo_url = 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAA0fAAAAJDc0Nzk1ZTcyLWQwZjItNDhiMi1iMzM4LTEwMGNkYzE3MzYxMA.jpg'
 user8.remote_photo_url = 'https://img1.closermag.fr/var/closermag/storage/images/1/2/5/6/8/12568759/kim-kardashian-toujours-aussi-traumatisee-par-son-agression-paris-cesse-pleurer_exact540x405_l.jpg'
 
-puts "creating sozees ..."
-sozee1 = Sozee.new(sozee_name: "François Hollande", sozee_of: "test", description: "Parce qu'il faut toujours un représentant politique dans vos cocktails dinatoires", category: "Politique", price_per_hour: 100, user: user1)
-sozee2 = Sozee.new(sozee_name: "Johnny Hallyday", sozee_of: "test", description: "Ah que je t'aime, voix parfaite", category: "Chanteur", price_per_hour: 10, user: user2)
-sozee3 = Sozee.new(sozee_name: "Fabien Barthez", sozee_of: "test", description: "Prêt à mettre de l'action dans vos soirées !", category: "Acteur", price_per_hour: 20, user: user3)
-sozee4 = Sozee.new(sozee_name: "Céline Dion", sozee_of: "test", description: "blablablaaaaa bla bla blaaa blaaaaa", category: "Chanteur", price_per_hour: 1000, user: user4)
-sozee5 = Sozee.new(sozee_name: "Stromae", sozee_of: "test", description: "blablablaaaaa bla bla blaaa blaaaaa alors on danse", category: "Politique", price_per_hour: 100, user: user5)
-sozee6 = Sozee.new(sozee_name: "Emmanuel Macron", sozee_of: "test", description: "C'est de la poudre de perlinpinpin", category: "Politique", price_per_hour: 1500, user: user6)
-sozee7 = Sozee.new(sozee_name: "Jean-Vincent Placé", sozee_of: "test", description: "Prêt à mettre de l'action dans vos soirées... ", category: "Acteur", price_per_hour: 20, user: user7)
-sozee8 = Sozee.new(sozee_name: "Brigitte Macron", sozee_of: "test", description: "blablablaaaaa bla bla blaaa blaaaaa", category: "Première Dame", price_per_hour: 7900, user: user8)
+puts "creating sozees..."
+sozee1 = Sozee.new(sozee_of: "François Hollande", sozee_name: "test", description: "Parce qu'il faut toujours un représentant politique dans vos cocktails dinatoires", category: "Politique", price_per_hour: 100, user: user1)
+sozee2 = Sozee.new(sozee_of: "Johnny Hallyday", sozee_name: "test", description: "Ah que je t'aime, voix parfaite", category: "Chanteur", price_per_hour: 10, user: user2)
+sozee3 = Sozee.new(sozee_of: "Fabien Barthez", sozee_name: "test", description: "Prêt à mettre de l'action dans vos soirées !", category: "Acteur", price_per_hour: 20, user: user3)
+sozee4 = Sozee.new(sozee_of: "Céline Dion", sozee_name: "test", description: "blablablaaaaa bla bla blaaa blaaaaa", category: "Chanteur", price_per_hour: 1000, user: user4)
+sozee5 = Sozee.new(sozee_of: "Stromae", sozee_name: "test", description: "blablablaaaaa bla bla blaaa blaaaaa alors on danse", category: "Politique", price_per_hour: 100, user: user5)
+sozee6 = Sozee.new(sozee_of: "Emmanuel Macron", sozee_name: "test", description: "C'est de la poudre de perlinpinpin", category: "Politique", price_per_hour: 1500, user: user6)
+sozee7 = Sozee.new(sozee_of: "Jean-Vincent Placé", sozee_name: "test", description: "Prêt à mettre de l'action dans vos soirées... ", category: "Acteur", price_per_hour: 20, user: user7)
+sozee8 = Sozee.new(sozee_of: "Brigitte Macron", sozee_name: "test", description: "blablablaaaaa bla bla blaaa blaaaaa", category: "Première Dame", price_per_hour: 7900, user: user8)
 
-puts "adding photos to sozees ..."
+puts "adding photos to sozees..."
 sozee1.remote_photo_url = 'http://www.sosiestar.com/wp-content/uploads/2015/07/sosie-metisse-de-francois-hollande.jpg'
 sozee2.remote_photo_url = 'https://img2.telestar.fr/var/telestar/storage/images/media/images/2014/photos/johnny-hallyday/hallyday_013/203099-1-fre-FR/hallyday_013_width1024.jpg'
 sozee3.remote_photo_url = 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/5/000/1aa/260/3e293d1.jpg'
@@ -51,7 +52,8 @@ sozee5.remote_photo_url = 'http://www.paris-normandie.fr/documents/10157/0/mod01
 sozee6.remote_photo_url = 'https://www.francetvinfo.fr/image/75e5y9n5e-6c18/578/598/12338640.jpg'
 sozee7.remote_photo_url = 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAA0fAAAAJDc0Nzk1ZTcyLWQwZjItNDhiMi1iMzM4LTEwMGNkYzE3MzYxMA.jpg'
 sozee8.remote_photo_url = 'https://img1.closermag.fr/var/closermag/storage/images/1/2/5/6/8/12568759/kim-kardashian-toujours-aussi-traumatisee-par-son-agression-paris-cesse-pleurer_exact540x405_l.jpg'
-puts "saving sozees ..."
+
+puts "saving sozees..."
 sozee1.save
 sozee2.save
 sozee3.save
@@ -61,3 +63,4 @@ sozee6.save
 sozee7.save
 sozee8.save
 
+puts "Seeds done!"

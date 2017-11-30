@@ -6,4 +6,5 @@ class UsersController < ApplicationController
 
    # authorize @user
  end
+
 end

@@ -1,10 +1,18 @@
 <% unless current_user.sozees.empty? %>
   <h3>Mon profil Sozee</h3>
-    <!-- mes reservations en tant que sozee -->
+    <!-- afficher les demandes de réservation de la part des autres users-->
     <p>Demandes en cours :</p>
+      <!-- <User> souhaite vous réserver du <> au <> -->
       <% current_user.sozees.first.bookings.each do |booking| %>
-      <p><%= booking.user.username%> souhaite vous réserver du <%= booking.starts_at %> au <%= booking.ends_at %> <%= link_to "Accepter" %>  <%= link_to "Refuser" %> </p>
-  <% end %>
+        <p><%= booking.user.username%> souhaite vous réserver du <%= booking.starts_at %> au <%= booking.ends_at %>
+          <!-- Donner la possibilité d'accepter ou de refuser une demande -->
+          <%= link_to "Accepter" %>
+          <%= link_to "Refuser", sozee_booking_path(booking.sozee_id, booking),
+          method: :delete,
+          data: { confirm: "Are you sure?" } %>
+        </p>
+      <% end %>
+    <!-- Donner la possibilité de supprimer son profil de Sozee -->
     <p><%= link_to "Supprimer mon annonce" %></p>
 
     <!-- mes reservations en tant que user -->

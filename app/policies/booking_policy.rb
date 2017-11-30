@@ -9,6 +9,10 @@ class BookingPolicy < ApplicationPolicy
     true
   end
 
+  def destroy?
+    true
+  end
+
   private
 
   def is_user_the_owner?

@@ -1,9 +1,19 @@
 class SozeesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
-  def  index
-    @sozees = Sozee.where.not(latitude: nil, longitude: nil)
-
+  def index
+    if params[:query].present?
+      sql_query = " \
+        sozees.sozee_name @@ :query \
+        OR sozees.category @@ :query \
+        OR users.username @@ :query \
+        OR users.city @@ :query \
+      "
+      @sozees = Sozee.joins(:user).where(sql_query, query: "%#{params[:query]}%")
+    else
+      @sozees = Sozee.all
+      # @sozees = Sozee.where.not(latitude: nil, longitude: nil)
+    end
     @markers = @sozees.map do |sozee|
       {
         lat: sozee.latitude,

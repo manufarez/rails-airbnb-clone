@@ -8,12 +8,12 @@
         <!-- Donner la possibilité d'accepter ou de refuser une demande -->
 
         <%= simple_form_for [current_user.sozees.first, booking] do |f| %>
-           <%= f.input :status, as: :hidden, input_html: { value: "Acceptée" } %>
+          <%= f.input :status, as: :hidden, input_html: { value: "Acceptée" } %>
           <%= f.button :submit, 'Accepter' %>
         <% end %>
 
         <%= simple_form_for [current_user.sozees.first, booking] do |f| %>
-           <%= f.input :status, as: :hidden, input_html: { value: "Refusée" } %>
+          <%= f.input :status, as: :hidden, input_html: { value: "Refusée" } %>
           <%= f.button :submit, 'Refuser' %>
         <% end %>
 

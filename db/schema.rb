@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20171130145134) do
     t.float "longitude"
     t.string "sozee_of"
     t.string "address"
+    t.string "sozee_of"
     t.index ["user_id"], name: "index_sozees_on_user_id"
   end
 

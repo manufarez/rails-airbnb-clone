@@ -8,12 +8,12 @@
         <!-- Donner la possibilité d'accepter ou de refuser une demande -->
 
         <%= simple_form_for [current_user.sozees.first, booking] do |f| %>
-           <%= f.input :status, as: :hidden, input_html: { value: "Acceptée" } %>
+          <%= f.input :status, as: :hidden, input_html: { value: "Acceptée" } %>
           <%= f.button :submit, 'Accepter' %>
         <% end %>
 
         <%= simple_form_for [current_user.sozees.first, booking] do |f| %>
-           <%= f.input :status, as: :hidden, input_html: { value: "Refusée" } %>
+          <%= f.input :status, as: :hidden, input_html: { value: "Refusée" } %>
           <%= f.button :submit, 'Refuser' %>
         <% end %>
 
@@ -35,6 +35,5 @@
 <% else %>
   <h3>Mon tableau de bord</h3>
     <h4> Mes réservations </h4>
-     <!--  <p>Date : du <%= current_user.bookings.last.starts_at%> au <%= current_user.bookings.last.ends_at%> </p>
-      <p>Statut : en attente d'acceptation du sozee </p> -->
+
  <% end %>

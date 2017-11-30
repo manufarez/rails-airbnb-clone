@@ -6,7 +6,5 @@ class User < ApplicationRecord
   mount_uploader :photo, PhotoUploader
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  geocoded_by :city
-  after_validation :geocode, if: :city_changed?
 end
 

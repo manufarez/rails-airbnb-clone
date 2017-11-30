@@ -5,5 +5,7 @@ class User < ApplicationRecord
   has_many :bookings, dependent: :destroy
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+  geocoded_by :city
+  after_validation :geocode, if: :city_changed?
 end
 

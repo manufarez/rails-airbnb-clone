@@ -20,7 +20,9 @@
 
 .card-user {
   width: 100%;
-  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2))
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));
+  border-radius: 1px;
+  box-shadow: 1px 1px 2px rgba(150, 150, 150, 0.7);
 }
 .card-category {
   font-size: 15px;

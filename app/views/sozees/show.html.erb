@@ -2,12 +2,28 @@
   <div class="container-show">
     <div class="card-show">
       <%= cl_image_tag @sozee.photo, class: "card-user",  width: 500, height: 350, crop: :fill%>
-      <h3><%= @sozee.sozee_name %></h3>
-      <p>Sosie de : <strong><%= @sozee.sozee_of %></strong> &nbsp&nbsp Catégorie : <strong><%= @sozee.category %></strong> &nbsp&nbsp Prix :  <strong><%= @sozee.price_per_hour %>€/h</strong></p>
-      <p>Description du sozee :</p>
-      <p><strong><%= @sozee.description %></strong></p>
-    </div>
+      <h3 id="sozee-name-show"><%= @sozee.sozee_name %></h3>
+      <h3 id="sozee-price-show"><%= @sozee.price_per_hour %>€/h</h3>
+      <div class="wrapper-sozee-show">
+        <div class="sozee-infos-show">
+          <p>Sosie de <strong><%= @sozee.sozee_of %></strong> &nbsp&nbsp Catégorie : <strong><%= @sozee.category %></strong></p>
+        </div>
+        <div class="sozee-description-show">
+          <p>"<%= @sozee.description %>"</p>
+        </div>
+        <div class="reviews">
 
+          <h4><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-half-o" aria-hidden="true"></i></h4>
+          <p class="review-category"><strong>Ressemblance physique</strong></p>
+
+          <h4><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-half-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></h4>
+          <p class="review-category"><strong>Imitation</strong></p>
+
+          <h4><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></h4>
+          <p class="review-category" ><strong>Animation</strong></p>
+        </div>
+      </div>
+    </div>
     <div class="info-show">
           <!-- si visitor -->
       <% if user_signed_in? == false %>
@@ -21,11 +37,19 @@
       <%= link_to "Supprimer mon annonce" %>
       <!-- si j'ai envoyé une demande -->
       <% elsif !@sozee.bookings.where("user_id = ?", current_user.id).empty? %>
-      Vous avez une demande en cours pour ce sozee <%= link_to "Statut de ma demande", dashboard_path %>
+      <div class="booking-info-show">
+        <p>Demande de réservation <%= link_to "en cours", dashboard_path %> pour ce sozee.</p>
+        <h3 id="new-booking-title">Nouvelle réservation</h3>
+      </div>
+      <div class="new-booking-form">
       <%= render "bookings/new", sozee: @sozee, booking: @booking %>
+      </div>
       <!-- sinon -->
       <% else %>
-      <%= render "bookings/new", sozee: @sozee, booking: @booking %>
+        <h3 id="title-info-show">Réserver ce sozee</h3>
+        <div class="form-container-show">
+          <%= render "bookings/new", sozee: @sozee, booking: @booking %>
+        </div>
       <% end %>
     </div>
   </div>

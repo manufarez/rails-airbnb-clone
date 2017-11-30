@@ -2,7 +2,15 @@ class SozeesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def  index
-    @sozees = Sozee.all
+    @sozees = Sozee.where.not(latitude: nil, longitude: nil)
+
+    @markers = @sozees.map do |sozee|
+      {
+        lat: sozee.latitude,
+        lng: sozee.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/sozees/map_box", locals: { sozee: sozee }) }
+      }
+    end
   end
 
   def new
@@ -37,6 +45,6 @@ class SozeesController < ApplicationController
   private
 
   def sozee_params
-    params.require(:sozee).permit(:sozee_name, :description, :category, :price_per_hour, :photo, :id)
+    params.require(:sozee).permit(:sozee_name, :description, :address, :category, :price_per_hour, :photo, :id)
   end
 end

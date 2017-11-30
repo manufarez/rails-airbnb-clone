@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      redirect_to dashboard_path, notice: 'The booking was successfully created.'
+      redirect_to sozee_path(@sozee), notice: 'The booking was successfully created.'
     else
       render :new
     end

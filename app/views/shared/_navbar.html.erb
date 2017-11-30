@@ -6,34 +6,39 @@
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-    <% if user_signed_in? %>
-
+    <% if user_signed_in? && current_user.sozees.empty? %>
       <!-- Links when logged in -->
       <%= link_to "Devenir sozee", new_sozee_path, class: "navbar-wagon-item navbar-wagon-link devenir " %>
-
       <!-- Avatar with dropdown menu -->
-      <div class="navbar-wagon-item">
+        <%= link_to dashboard_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+          <%= t(".profile", default: "Mon profil") %>
+        <% end %>
+        <%= link_to destroy_user_session_path,class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
+          <%= t(".sign_out", default: "Déconnection") %>
+        <% end %>
+        <div class="dropdown">
+          <%= image_tag "bmy6jhjzpiqgk4sdoboc.jpg", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
+            <li><%= link_to current_user.username%></li>
+          </ul>
+        </div>
+    <!-- si le user est un sozee (pas de bouton devenir sozee) -->
+    <% elsif user_signed_in? && !current_user.sozees.empty? %>
+        <%= link_to dashboard_path, class: "navbar-wagon-item navbar-wagon-link" do %>
+        <%= t(".profile", default: "Mon profil") %>
+        <% end %>
+        <%= link_to destroy_user_session_path,class: "navbar-wagon-item navbar-wagon-link", method: :delete do %>
+        <%= t(".sign_out", default: "Déconnection") %>
+        <% end %>
         <div class="dropdown">
           <%= cl_image_tag current_user.photo, class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-            <li><%= link_to current_user.username, ""%></li>
-            <li>
-              <%= link_to dashboard_path do %>
-                <i class="fa fa-user"></i> <%= t(".profile", default: "Mon tableau de bord") %>
-              <% end %>
-            </li>
-            <li>
-              <%= link_to destroy_user_session_path, method: :delete do %>
-                <i class="fa fa-sign-out"></i>  <%= t(".sign_out", default: "Log out") %>
-              <% end %>
-            </li>
+            <li><%= link_to current_user.username%></li>
           </ul>
         </div>
-      </div>
     <% else %>
       <!-- Login link (when logged out) -->
-      <%= link_to "Devenir sozee", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
+      <%= link_to "Devenir sozee", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link devenir" %>
       <%= link_to t(".sign_in", default: "Connexion"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to t(".sign_up", default: "Inscription"), new_user_registration_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% end %>
@@ -44,10 +49,15 @@
     <div class="dropdown">
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
-        <% if user_signed_in? == true %>
-          <li><%= link_to current_user.username, ""%></li>
+        <% if user_signed_in? && current_user.sozees.empty? %>
+          <li><%= link_to current_user.username%></li>
           <li><%= link_to "Devenir sozee", new_sozee_path %></li>
-          <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to "Mon profil", dashboard_path %></li>
+          <li><%= link_to "Déconnection", destroy_user_session_path, method: :delete %></li>
+        <% elsif user_signed_in? && !current_user.sozees.empty? %>
+          <li><%= link_to current_user.username%></li>
+          <li><%= link_to "Mon profil", dashboard_path %></li>
+          <li><%= link_to "Déconnection", destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "Devenir sozee", new_sozee_path %></li>
           <li><%= link_to "Connexion", new_user_session_path %></li>

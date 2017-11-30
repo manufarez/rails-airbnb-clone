@@ -34,14 +34,14 @@ user7.remote_photo_url = 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAA
 user8.remote_photo_url = 'https://img1.closermag.fr/var/closermag/storage/images/1/2/5/6/8/12568759/kim-kardashian-toujours-aussi-traumatisee-par-son-agression-paris-cesse-pleurer_exact540x405_l.jpg'
 
 puts "creating sozees..."
-sozee1 = Sozee.new(sozee_of: "François Hollande", sozee_name: "test", description: "Parce qu'il faut toujours un représentant politique dans vos cocktails dinatoires", category: "Politique", price_per_hour: 100, user: user1)
-sozee2 = Sozee.new(sozee_of: "Johnny Hallyday", sozee_name: "test", description: "Ah que je t'aime, voix parfaite", category: "Chanteur", price_per_hour: 10, user: user2)
-sozee3 = Sozee.new(sozee_of: "Fabien Barthez", sozee_name: "test", description: "Prêt à mettre de l'action dans vos soirées !", category: "Acteur", price_per_hour: 20, user: user3)
-sozee4 = Sozee.new(sozee_of: "Céline Dion", sozee_name: "test", description: "blablablaaaaa bla bla blaaa blaaaaa", category: "Chanteur", price_per_hour: 1000, user: user4)
-sozee5 = Sozee.new(sozee_of: "Stromae", sozee_name: "test", description: "blablablaaaaa bla bla blaaa blaaaaa alors on danse", category: "Politique", price_per_hour: 100, user: user5)
-sozee6 = Sozee.new(sozee_of: "Emmanuel Macron", sozee_name: "test", description: "C'est de la poudre de perlinpinpin", category: "Politique", price_per_hour: 1500, user: user6)
-sozee7 = Sozee.new(sozee_of: "Jean-Vincent Placé", sozee_name: "test", description: "Prêt à mettre de l'action dans vos soirées... ", category: "Acteur", price_per_hour: 20, user: user7)
-sozee8 = Sozee.new(sozee_of: "Brigitte Macron", sozee_name: "test", description: "blablablaaaaa bla bla blaaa blaaaaa", category: "Première Dame", price_per_hour: 7900, user: user8)
+sozee1 = Sozee.new(sozee_of: "François Hollande", sozee_name: "Hollandus", description: "Parce qu'il faut toujours un représentant politique dans vos cocktails dinatoires", category: "Politique", price_per_hour: 100, user: user1)
+sozee2 = Sozee.new(sozee_of: "Johnny Hallyday", sozee_name: "Jojo le routard", description: "Ah que je t'aime, voix parfaite", category: "Chanteur", price_per_hour: 10, user: user2)
+sozee3 = Sozee.new(sozee_of: "Fabien Barthez", sozee_name: "Nicolas", description: "Prêt à mettre de l'action dans vos soirées !", category: "Acteur", price_per_hour: 20, user: user3)
+sozee4 = Sozee.new(sozee_of: "Céline Dion", sozee_name: "Céline la matrone", description: "blablablaaaaa bla bla blaaa blaaaaa", category: "Chanteur", price_per_hour: 1000, user: user4)
+sozee5 = Sozee.new(sozee_of: "Stromae", sozee_name: "Stromi le sosie", description: "blablablaaaaa bla bla blaaa blaaaaa alors on danse", category: "Politique", price_per_hour: 100, user: user5)
+sozee6 = Sozee.new(sozee_of: "Emmanuel Macron", sozee_name: "Micron", description: "C'est de la poudre de perlinpinpin", category: "Politique", price_per_hour: 1500, user: user6)
+sozee7 = Sozee.new(sozee_of: "Jean-Vincent Placé", sozee_name: "Emmanuel", description: "Prêt à mettre de l'action dans vos soirées... ", category: "Acteur", price_per_hour: 20, user: user7)
+sozee8 = Sozee.new(sozee_of: "Brigitte Macron", sozee_name: "Bribri", description: "blablablaaaaa bla bla blaaa blaaaaa", category: "Première Dame", price_per_hour: 7900, user: user8)
 
 puts "adding photos to sozees..."
 sozee1.remote_photo_url = 'http://www.sosiestar.com/wp-content/uploads/2015/07/sosie-metisse-de-francois-hollande.jpg'

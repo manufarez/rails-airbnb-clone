@@ -11,12 +11,13 @@
     <div class="col-xs-12 col-sm-6 col-lg-6">
       <div class="main-card-index">
        <div class="card-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path sozee.photo %>')";>
+        <!-- , crop: :thumb, gravity: :face -->
         <div class="card-category-index"><%= sozee.user.city %></div>
        </div> <!-- card index -->
        <div class="card-info-index">
         <div class="card-description-index">
-          <h2><%= sozee.sozee_name %> <%= sozee.sozee_of %></h2>
-          <p><%= sozee.user.username %></p>
+          <h2><%= sozee.sozee_name %></h2>
+          <p><%= sozee.sozee_of %></p>
         </div><!--  card description -->
         <div class="price">
           <p><%=sozee.category%></p>

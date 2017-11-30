@@ -54,11 +54,11 @@
           <li><%= link_to current_user.username%></li>
           <li><%= link_to "Devenir sozee", new_sozee_path %></li>
           <li><%= link_to "Mon profil", dashboard_path %></li>
-          <li><%= link_to "Déconnection", destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to "Déconnexion", destroy_user_session_path, method: :delete %></li>
         <% elsif user_signed_in? && !current_user.sozees.empty? %>
           <li><%= link_to current_user.username%></li>
           <li><%= link_to "Mon profil", dashboard_path %></li>
-          <li><%= link_to "Déconnection", destroy_user_session_path, method: :delete %></li>
+          <li><%= link_to "Déconnexion", destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "Devenir sozee", new_sozee_path %></li>
           <li><%= link_to "Connexion", new_user_session_path %></li>

@@ -1,39 +1,62 @@
 <% unless current_user.sozees.empty? %>
-  <h3>Mon profil Sozee</h3>
-    <!-- afficher les demandes de réservation de la part des autres users-->
-    <p>Demandes en cours :</p>
-      <!-- <User> souhaite vous réserver du <> au <> -->
-      <% current_user.sozees.first.bookings.each do |booking| %>
-        <p><%= booking.user.username%> souhaite vous réserver du <%= Date.parse(booking.starts_at).strftime("%m/%d/%Y %H:%M") %> au <%= Date.parse(booking.ends_at).strftime("%m/%d/%Y %H:%M") %>
-        <!-- Donner la possibilité d'accepter ou de refuser une demande -->
 
-        <%= simple_form_for [current_user.sozees.first, booking] do |f| %>
-          <%= f.input :status, as: :hidden, input_html: { value: "Acceptée" } %>
-          <%= f.button :submit, 'Accepter' %>
-        <% end %>
+  <div class="container text-center">
+    <div class="profile">
+      <div class="card main-content">
+        <div class="card-content">
+          <%= cl_image_tag current_user.photo, class: "dashboard-avatar" %>
+          <h2><%= current_user.username %></h2>
+          <p><%= current_user.city %></p>
+          <a href="#" class="btn btn-primary btn-lg">Get in touch</a>
+        </div>
+      </div>
 
-        <%= simple_form_for [current_user.sozees.first, booking] do |f| %>
-          <%= f.input :status, as: :hidden, input_html: { value: "Refusée" } %>
-          <%= f.button :submit, 'Refuser' %>
-        <% end %>
+      <div class="card description">
+        <div class="views">
+          <div class="choice mybookings">Mes Bookings</div>
+          <div class="choice myclients">Mes invitations</div>
+        </div>
+        <hr>
+        <div class="view-content">
+          <!-- afficher les demandes de réservation de la part des autres users-->
+          <p>Demandes en cours :</p>
+            <!-- <User> souhaite vous réserver du <> au <> -->
+            <% current_user.sozees.first.bookings.each do |booking| %>
+              <p><%= booking.user.username%> souhaite vous réserver le <%= Date.parse(booking.day).strftime("%m/%d/%Y") %> de <%= booking.end_time%>h. à <%= booking.end_time%>h.</p>
+              <!-- Donner la possibilité d'accepter ou de refuser une demande -->
 
-        <%= link_to "Supprimer la demande", sozee_booking_path(booking.sozee_id, booking),
-        method: :delete,
-        data: { confirm: "Are you sure?" } %>
-        </p>
+              <%= simple_form_for [current_user.sozees.first, booking] do |f| %>
+                <%= f.input :status, as: :hidden, input_html: { value: "Acceptée" } %>
+                <%= f.button :submit, 'Accepter' %>
+              <% end %>
 
-        <p><%= link_to "Supprimer mon annonce", sozee_path(booking.sozee_id),
-            method: :delete,
-            data: { confirm: "Are you sure?" } %>
-        </p>
+              <%= simple_form_for [current_user.sozees.first, booking] do |f| %>
+                <%= f.input :status, as: :hidden, input_html: { value: "Refusée" } %>
+                <%= f.button :submit, 'Refuser' %>
+              <% end %>
 
-      <% end %>
-    <!-- Donner la possibilité de supprimer son profil de Sozee -->
+              <%= link_to "Supprimer la demande", sozee_booking_path(booking.sozee_id, booking),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+              </p>
 
-    <!-- mes reservations en tant que user -->
+              <p><%= link_to "Supprimer mon annonce", sozee_path(booking.sozee_id),
+                  method: :delete,
+                  data: { confirm: "Are you sure?" } %>
+              </p>
 
-<% else %>
-  <h3>Mon tableau de bord</h3>
-    <h4> Mes réservations </h4>
+            <% end %>
+          <!-- Donner la possibilité de supprimer son profil de Sozee -->
+          <!-- mes reservations en tant que user -->
 
- <% end %>
+      <% else %>
+        <h3>Mon tableau de bord</h3>
+          <h4> Mes réservations </h4>
+           <!--  <p>Date : du <%= current_user.bookings.last.starts_at%> au <%= current_user.bookings.last.ends_at%> </p>
+            <p>Statut : en attente d'acceptation du sozee </p> -->
+       <% end %>
+
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,56 @@
+
+.profile {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 350px 1fr 1fr 1fr;
+  height: calc(100vh - 70px);
+  padding: 30px;
+}
+
+.dashboard-avatar {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+
+@media(max-width: 1000px) {
+  .profile {
+    /* re-define your grid for mobile and tablet */
+  display: block;
+
+  }
+}
+
+.profile .main-content {
+  grid-row: 1 / span 2;
+  grid-column: 1 / span 1;
+}
+
+.profile .description {
+  grid-row: 1 / span 2;
+  grid-column: 2 / span 3;
+}
+
+.profile p {
+  padding: 0px 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+
+.stats h3 {
+  font-size: 28px;
+  color: #37B686;
+}
+
+.description h3 {
+  font-weight: lighter;
+}

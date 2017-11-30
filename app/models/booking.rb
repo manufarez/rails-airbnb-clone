@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :sozee
-  validates :location, :starts_at, :ends_at, presence: true
+  validates :location, :day, :start_time, :end_time, presence: true
 end

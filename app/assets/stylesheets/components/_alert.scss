@@ -9,7 +9,9 @@
 }
 .alert-info {
   background: $green;
+  margin-bottom: 0px;
 }
 .alert-warning {
   background: $red;
+  margin-bottom: 0px !important;
 }

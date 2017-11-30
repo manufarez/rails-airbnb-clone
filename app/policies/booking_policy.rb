@@ -9,6 +9,14 @@ class BookingPolicy < ApplicationPolicy
     true
   end
 
+  def update?
+    user == record.sozee.user
+  end
+
+  def destroy?
+    true
+  end
+
   private
 
   def is_user_the_owner?

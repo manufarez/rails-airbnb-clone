@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171128174756) do
+ActiveRecord::Schema.define(version: 20171130143328) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -18,25 +18,28 @@ ActiveRecord::Schema.define(version: 20171128174756) do
   create_table "bookings", force: :cascade do |t|
     t.string "location"
     t.string "starts_at"
-    t.string "ends_at"
     t.string "status"
     t.bigint "user_id"
     t.bigint "sozee_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "bookingmessage"
+    t.integer "end_time"
+    t.integer "start_time"
     t.index ["sozee_id"], name: "index_bookings_on_sozee_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
   end
 
   create_table "sozees", force: :cascade do |t|
     t.string "sozee_name"
-    t.string "description"
+    t.text "description"
     t.string "category"
     t.integer "price_per_hour"
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+    t.string "sozee_of"
     t.index ["user_id"], name: "index_sozees_on_user_id"
   end
 
@@ -55,6 +58,7 @@ ActiveRecord::Schema.define(version: 20171128174756) do
     t.datetime "updated_at", null: false
     t.string "username"
     t.string "city"
+    t.string "photo"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

@@ -25,6 +25,7 @@ user7 = User.new(username: "Rayan Gosselin", city: "Paris", email: "Emmanuel.ran
 user8 = User.new(username: "Nelson Mandella", city: "Paris", email: "Brigitte.random@gmail.com", password: "rrlewagon")
 user9 = User.new(username: "Johnnie Holiday", city: "Paris", email: "johnny.random@gmail.com", password: "rrlewagon")
 user10 = User.new(username: "Johnny Halidé", city: "Paris", email: "johnny54.random@gmail.com", password: "rrlewagon")
+user11 = User.new(username: "Joffrey", city: "Paris", email: "joffrey@gmail.com", password: "joffrey")
 
 
 puts "adding photos to users..."
@@ -38,6 +39,7 @@ user7.remote_photo_url = 'http://bravo.ly/2ALDLsq'
 user8.remote_photo_url = 'http://www.trbimg.com/img-59301dcd/turbine/la-et-entertainment-news-updates-june-a-star-is-born-morgan-freeman-turns-80-1496268967'
 user9.remote_photo_url = 'https://culturebox.francetvinfo.fr/sites/default/files/assets/images/2016/08/vlcsnap-2016-08-27-15h23m43s0.png'
 user10.remote_photo_url = 'https://france3-regions.francetvinfo.fr/normandie/sites/regions_france3/files/styles/top_big/public/assets/images/2013/10/08/johnny_rock.jpg'
+user11.remote_photo_url = 'http://res.cloudinary.com/dvwo2ow8v/image/upload/v1512144099/<Capture_d_e%CC%81cran_2017-12-01_a%CC%80_17 class="01 15_ih15j4 png"></Capture_d_e%CC%81cran_2017-12-01_a%CC%80_17>'
 
 
 puts "saving users..."

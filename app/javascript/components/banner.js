@@ -2,14 +2,15 @@ import Typed from 'typed.js';
 
 function loadDynamicBannerText() {
   new Typed('#banner-typed-text', {
-    strings: ["Bordeaux", "Beaujolais", "Muscadet", "Côtes-du-Rhône"],
-    typeSpeed: 60,
+    strings: ["Johnny", "Dave", "Brigitte Macron", "Bruce Willis"],
+    //typespeed plus t'augmente plus ca ralenti
+    typeSpeed: 50,
     // backspacing speed
     startDelay: 1200,
     // backspacing speed
-    backSpeed: 30,
+    backSpeed: 50,
     // time before backspacing
-    backDelay: 800,
+    backDelay: 1200,
     // loop
     loop: true,
     // show cursor

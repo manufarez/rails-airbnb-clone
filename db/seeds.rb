@@ -14,6 +14,7 @@ puts "remove users"
 User.destroy_all
 
 puts "creating users..."
+
 user1 = User.new(username: "Leonard Messi", city: "Paris", email: "manuel.farez@gmail.com", password: "mflewagon")
 user2 = User.new(username: "Juste Jésus", city: "Paris", email: "joffrey.cazalbou@gmail.com", password: "jclewagon")
 user3 = User.new(username: "Fabrice Barthez", city: "Paris", email: "nicolas.lizop@gmail.com", password: "nzlewagon")
@@ -44,6 +45,7 @@ user7.save!
 user8.save!
 
 puts "creating sozees..."
+
 sozee1 = Sozee.new(sozee_of: "Lionel Messi", sozee_name: "Leonard Messi", description: "Sosie officiel de la pulga, j'imite son regard attachant et son accent à la perfection mais je ne touche pas le ballon.", category: "Sportif", price_per_hour: 1000, user: user1, latitude: 48.870299, longitude: 2.389295 )
 sozee2 = Sozee.new(sozee_of: "Jésus", sozee_name: "Juste Jésus", description: "Pour ambiancer vos évènements, rien de mieux qu'un verre avec Jésus !", category: "Personnage historique", price_per_hour: 10, user: user2, latitude: 48.865032, longitude: 2.379843 )
 sozee3 = Sozee.new(sozee_of: "Johnny Depp", sozee_name: "Germain Depp", description: "Elu 3 fois meilleur Jack Sparrow de France. Prêt à mettre de l'action dans vos soirées !", category: "Acteur/ Actrice", price_per_hour: 20, user: user3, latitude: 48.870620, longitude: 2.316765 )
@@ -58,7 +60,7 @@ sozee7 = Sozee.new(sozee_of: "Ryan Gosling", sozee_name: "Rayan Gosselin", descr
 sozee8 = Sozee.new(sozee_of: "Nelson Mandela", sozee_name: "Nelson Mandella", description: "Sosie de Mandela depuis sa sortie de Robben Island, j'interprète également Dieu à l'occasion (voir tarifs divins en détail).", category: "Acteur/Actrice", price_per_hour: 790, user: user8, latitude: 48.838736, longitude: 2.378595 )
 
 puts "adding photos to sozees..."
-sozee1.remote_photo_url = 'http://res.cloudinary.com/dvwo2ow8v/image/upload/v1512126400/sosie-messi-iran-solo-1170x658_juihgs.jpg'
+sozee1.remote_photo_url = 'http://lebuzz.eurosport.fr/wp-content/uploads/sites/3/2017/05/sosie-messi-iran-solo-1170x658.jpg'
 sozee2.remote_photo_url = 'https://cdn.mpasho.co.ke/wp-content/uploads/2016/11/Daniel-Christos-1778.jpg'
 sozee3.remote_photo_url = 'http://4.bp.blogspot.com/-Unqrgt17hp0/UqjZYE5UOBI/AAAAAAAAAJA/1UT9BpO0tt8/s1600/IMG_2486.JPG'
 sozee4.remote_photo_url = 'http://www.starway-agency.com/flo/album1photo1.jpg'

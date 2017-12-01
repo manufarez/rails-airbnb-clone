@@ -55,7 +55,7 @@
 ///// encadré user
 
 .dashboard .main-content {
-  grid-row: 1 / span 1;
+  grid-row: 1 / span 2;
   grid-column: 1 / span 1;
 }
 
@@ -127,6 +127,10 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin: 0px;
+}
+
+.labelslist li {
   margin: 0px;
 }
 
@@ -245,6 +249,7 @@
 }
 .message-body p {
   margin: 6px 0;
+  text-align: left;
 }
 
 .message-body .content {
@@ -260,7 +265,9 @@
   }
 }
 
-// status
+.btnoption {
+  margin: 0px;
+}
 
 .message-status {
   font-size: 14px;

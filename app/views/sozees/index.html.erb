@@ -3,7 +3,7 @@
     <%= form_tag sozees_path, class: "search-form" , method: :get do %>
       <%= text_field_tag :query,
         params[:query],
-        class: "form-control",
+        class: "form-control search-loop",
         placeholder: "Nom, catégorie, ville"
       %>
     <% end %>

@@ -4,8 +4,9 @@ class SozeesController < ApplicationController
   def index
     if params[:query].present?
       sql_query = " \
-        sozees.sozee_name @@ :query \
+        sozees.sozee_of @@ :query \
         OR sozees.category @@ :query \
+        OR sozees.sozee_name @@ :query \
         OR users.username @@ :query \
         OR users.city @@ :query \
       "
@@ -16,8 +17,8 @@ class SozeesController < ApplicationController
     @markers = @sozees.map do |sozee|
       {
         lat: sozee.latitude,
-        lng: sozee.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/sozees/map_box", locals: { sozee: sozee }) }
+        lng: sozee.longitude,
+        infoWindow: { content: render_to_string(partial: "/sozees/map_box", locals: { sozee: sozee }) }
       }
     end
   end

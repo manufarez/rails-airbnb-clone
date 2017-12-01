@@ -8,7 +8,10 @@
       <h3 id="sozee-price-show"><%= @sozee.price_per_hour %>€<p>de l'heure</p></h3>
       <div class="wrapper-sozee-show">
         <div class="sozee-infos-show">
-          <p>Sosie de <strong><%= @sozee.sozee_of %></strong> &nbsp&nbsp Catégorie : <strong><%= @sozee.category %></strong></p>
+          <p>Sozee de <%= @sozee.sozee_of %></p>
+        </div>
+        <div class="sozee-description-show">
+          <p>"<%= @sozee.description %>"</p>
         </div>
         <div class="reviews">
           <ul class="list-inline">
@@ -26,32 +29,33 @@
             </li>
           </ul>
         </div>
-        <div class="sozee-description-show">
-          <p>"<%= @sozee.description %>"</p>
-        </div>
       </div>
     </div>
+
     <div class="info-show">
-          <!-- si visitor -->
+
       <% if user_signed_in? == false %>
-              <!-- bouton vers signup -->
-      <%= link_to "Inscris toi pour booker ce sozee !", new_user_registration_path, class: "btn btn-primary" %>
-      <!-- si owner du sozee -->
-      <% elsif @sozee.user_id == @current_user.id %>
-      Mon annonce
-      <%= link_to "Gérer mes réservations", dashboard_path %>
-      <%= link_to "Editer mon annonce" %>
-      <%= link_to "Supprimer mon annonce" %>
-      <!-- si j'ai envoyé une demande -->
+        <%= link_to "Inscris toi pour booker ce sozee !", new_user_registration_path, class: "btn btn-primary" %>
+
       <% elsif !@sozee.bookings.where("user_id = ?", current_user.id).empty? %>
-      <div class="booking-info-show">
-        <p>Demande de réservation <%= link_to "en cours", dashboard_path %> pour ce sozee.</p>
-        <h3 id="new-booking-title">Nouvelle réservation</h3>
-      </div>
-      <div class="new-booking-form">
-      <%= render "bookings/new", sozee: @sozee, booking: @booking %>
-      </div>
-      <!-- sinon -->
+
+        <div class="booking-info-show">
+            <p>Demande de réservation <%= link_to "en cours", dashboard_path %> pour ce sozee.</p>
+        </div>
+            <h3 id="new-booking-title">Nouvelle réservation</h3>
+          <div class="new-booking-form">
+            <%= render "bookings/new", sozee: @sozee, booking: @booking %>
+        </div>
+
+      <% elsif @sozee.user_id == @current_user.id %>
+        <div class="booking-info-show">
+          <p>Ceci est votre annonce telle que vu par les utilisateurs. <%= link_to "Gérer mes réservations", dashboard_path %></p>
+        </div>
+          <h3 id="new-booking-title">Réservez ce sozee !</h3>
+          <div class="form-container-show">
+            <%= render "bookings/new", sozee: @sozee, booking: @booking %>
+        </div>
+
       <% else %>
         <h3 id="title-info-show">Réservez ce sozee !</h3>
         <div class="form-container-show">

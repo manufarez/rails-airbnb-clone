@@ -10,9 +10,9 @@
   flex: 0 0 58%;
   background-color: white;
   box-shadow: 1px 1px 2px rgba(150, 150, 150, 0.7);
-  padding-top: 80px;
-  padding-left: 60px;
-  padding-right: 60px;
+  padding-top: 15px;
+  padding-left: 50px;
+  padding-right: 50px;
 } p {
   margin: 0;
   margin-bottom: 10px;
@@ -26,8 +26,8 @@
 
 #sozee-name-show {
   position: absolute;
-  top: 15px;
-  left: 45px;
+  bottom: 190px;
+  left: 65px;
   font-weight: lighter;
   margin: 0 10px;
   margin-top: 15px;
@@ -35,8 +35,8 @@
 
 #sozee-price-show {
   position: absolute;
-  top: 5px;
-  right: 48px;
+  bottom: 170px;
+  right: 65px;
   margin: 0 10px;
   margin-top: 15px;
 }
@@ -48,25 +48,24 @@
 .sozee-infos-show {
   position: absolute;
   top: -40px;
-  right: 30px;
+  left: 28px;
   font-size: 13px;
-  color: white;
 }
 
 .reviews {
   position: absolute;
-  top: -35px;
-  right: 26px;
+  top: 60px;
+  right: 80px;
   margin-top: 15px;
 } h4 {
   margin-top: 0;
   margin-bottom: 0;
-  color: #FED130;
-  font-size: 22px;
+  color: #496DF4;
+  font-size: 20px;
 }
 
 .review-category {
-  font-size: 13px;
+  font-size: 9px;
   margin-left: 5px;
 }
 
@@ -75,10 +74,9 @@ li {
 }
 
 .sozee-description-show {
-  position: absolute;
-  top: 60px;
-  left: 30px;
-  text-align: center;
+  margin-top: 80px;
+  margin-left: 30px;
+
 }
 .info-show {
   position: relative;
@@ -86,15 +84,20 @@ li {
   align-items: center;
   background-color: white;
   box-shadow: 1px 1px 2px rgba(150, 150, 150, 0.7);
-  padding: 10px 50px;
+  padding: 10px 80px;
+  font-size: 14px;
+  .form-control {
+    font-size: 14px;
+  }
 }
 
 #title-info-show {
   position: absolute;
-  top: 0px;
-  right: 20px;
+  top: 8px;
+  right: 50px;
   font-weight: lighter;
   margin: 25px 10px;
+  font-size: 25px;
 }
 
 .form-container-show {
@@ -103,19 +106,36 @@ li {
 
 .booking-info-show {
   position: absolute;
-  top: 20px;
-  left: 18px;
+  top: 10px;
+  left: 19px;
   font-size: 30px;
 }
 
 #new-booking-title {
   position: absolute;
-  top: 8px;
-  right: 20px;
-  font-size: 30px;
+  top: 23px;
+  left: 19px;
+  font-size: 25px;
+  font-weight: lighter;
 }
 
 .new-booking-form {
   margin-top: 85px;
 }
 
+#mon-annonce {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+}
+
+#gerer-mon-annonce {
+  position: absolute;
+  top: 120px;
+  left: 20px;
+}
+
+.sozee-own-annonce {
+  background-color: red;
+  border: 3px solid red;
+}

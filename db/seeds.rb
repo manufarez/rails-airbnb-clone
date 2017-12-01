@@ -14,72 +14,67 @@ puts "remove users"
 User.destroy_all
 
 puts "creating users..."
-user1 = User.new(username: "Hollandus", city: "Paris", email: "manuel.farez@gmail.com", password: "mflewagon")
-user2 = User.new(username: "Jojo le routard", city: "Montpellier", email: "joffrey.cazalbou@gmail.com", password: "jclewagon")
-user3 = User.new(username: "Nicolas", city: "Paris", email: "nicolas.lizop@gmail.com", password: "nzlewagon")
-user4 = User.new(username: "Céline la matrone", city: "Tours", email: "francis.berger@gmail.com", password: "fblewagon")
-user5 = User.new(username: "Stromi le sosie", city: "Paris", email: "random.random@gmail.com", password: "rrlewagon")
-user6 = User.new(username: "Micron", city: "Paris", email: "random1.random1@gmail.com", password: "rr1lewagon")
-user7 = User.new(username: "Emmanuel", city: "Paris", email: "Emmanuel.random@gmail.com", password: "rrlewagon")
-user8 = User.new(username: "Brigitte Macron", city: "Paris", email: "Brigitte.random@gmail.com", password: "rrlewagon")
-user9 = User.new(username: "no_booking_user", city: "Paris", email: "nbu@gmail.com", password: "nnnnnnn")
-user10 = User.new(username: "booking_user", city: "Paris", email: "bu@gmail.com", password: "uuuuuuu")
+user1 = User.new(username: "Leonard Messi", city: "Paris", email: "manuel.farez@gmail.com", password: "mflewagon")
+user2 = User.new(username: "Juste Jésus", city: "Paris", email: "joffrey.cazalbou@gmail.com", password: "jclewagon")
+user3 = User.new(username: "Fabrice Barthez", city: "Paris", email: "nicolas.lizop@gmail.com", password: "nzlewagon")
+user4 = User.new(username: "Céline D'yon", city: "Paris", email: "francis.berger@gmail.com", password: "fblewagon")
+user5 = User.new(username: "Kim Jong Deux", city: "Paris", email: "random.random@gmail.com", password: "rrlewagon")
+user6 = User.new(username: "Michel Jacqueson", city: "Paris", email: "random1.random1@gmail.com", password: "rr1lewagon")
+user7 = User.new(username: "Rayan Gosselin", city: "Paris", email: "Emmanuel.random@gmail.com", password: "rrlewagon")
+user8 = User.new(username: "Nelson Mandela", city: "Paris", email: "Brigitte.random@gmail.com", password: "rrlewagon")
 
 puts "adding photos to users..."
-user1.remote_photo_url = 'https://www.google.fr/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwiggou4uebXAhXrAcAKHZrhBK8QjBwIBA&url=https%3A%2F%2Fwww.shareicon.net%2Fdownload%2F2016%2F09%2F01%2F822711_user_512x512.png&psig=AOvVaw34yIMkraE4A46itKBY8OSA&ust=1512136463748400'
-user2.remote_photo_url = 'https://img2.telestar.fr/var/telestar/storage/images/media/images/2014/photos/johnny-hallyday/hallyday_013/203099-1-fre-FR/hallyday_013_width1024.jpg'
-user3.remote_photo_url = 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/5/000/1aa/260/3e293d1.jpg'
+user1.remote_photo_url = 'http://lebuzz.eurosport.fr/wp-content/uploads/sites/3/2017/05/sosie-messi-iran-solo-1170x658.jpg'
+user2.remote_photo_url = 'https://cdn.mpasho.co.ke/wp-content/uploads/2016/11/Daniel-Christos-1778.jpg'
+user3.remote_photo_url = 'http://4.bp.blogspot.com/-Unqrgt17hp0/UqjZYE5UOBI/AAAAAAAAAJA/1UT9BpO0tt8/s1600/IMG_2486.JPG'
 user4.remote_photo_url = 'http://www.starway-agency.com/flo/album1photo1.jpg'
-user5.remote_photo_url = 'http://www.paris-normandie.fr/documents/10157/0/mod01/image_content_general_17845557_20141028161856.jpg'
-user6.remote_photo_url = 'https://www.francetvinfo.fr/image/75e5y9n5e-6c18/578/598/12338640.jpg'
-user7.remote_photo_url = 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAA0fAAAAJDc0Nzk1ZTcyLWQwZjItNDhiMi1iMzM4LTEwMGNkYzE3MzYxMA.jpg'
-user8.remote_photo_url = 'https://img1.closermag.fr/var/closermag/storage/images/1/2/5/6/8/12568759/kim-kardashian-toujours-aussi-traumatisee-par-son-agression-paris-cesse-pleurer_exact540x405_l.jpg'
-user9.remote_photo_url = 'https://www.google.fr/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwiggou4uebXAhXrAcAKHZrhBK8QjBwIBA&url=https%3A%2F%2Fwww.shareicon.net%2Fdownload%2F2016%2F09%2F01%2F822711_user_512x512.png&psig=AOvVaw34yIMkraE4A46itKBY8OSA&ust=1512136463748400'
-user10.remote_photo_url = 'https://www.google.fr/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwiggou4uebXAhXrAcAKHZrhBK8QjBwIBA&url=https%3A%2F%2Fwww.shareicon.net%2Fdownload%2F2016%2F09%2F01%2F822711_user_512x512.png&psig=AOvVaw34yIMkraE4A46itKBY8OSA&ust=1512136463748400'
+user5.remote_photo_url = 'https://i.ytimg.com/vi/RlOaxe5C2nE/maxresdefault.jpg'
+user6.remote_photo_url = 'https://i.ytimg.com/vi/dIzvdEGqg14/maxresdefault.jpg'
+user7.remote_photo_url = 'http://bravo.ly/2ALDLsq'
+user8.remote_photo_url = 'http://www.trbimg.com/img-59301dcd/turbine/la-et-entertainment-news-updates-june-a-star-is-born-morgan-freeman-turns-80-1496268967'
 
 puts "saving users..."
-user1.save
-user2.save
-user3.save
-user4.save
-user5.save
-user6.save
-user7.save
-user8.save
-user9.save
-user10.save
+user1.save!
+user2.save!
+user3.save!
+user4.save!
+user5.save!
+user6.save!
+user7.save!
+user8.save!
 
 puts "creating sozees..."
-sozee1 = Sozee.new(sozee_of: "François Hollande", sozee_name: "Hollandus", description: "Parce qu'il faut toujours un représentant politique dans vos cocktails dinatoires", category: "Politique", price_per_hour: 100, user: user1, latitude: 48.870299, longitude: 2.389295 )
-sozee2 = Sozee.new(sozee_of: "Johnny Hallyday", sozee_name: "Jojo le routard", description: "Ah que je t'aime, voix parfaite", category: "Chanteur", price_per_hour: 10, user: user2, latitude: 48.865032, longitude: 2.379843 )
-sozee3 = Sozee.new(sozee_of: "Fabien Barthez", sozee_name: "Nicolas", description: "Prêt à mettre de l'action dans vos soirées !", category: "Acteur", price_per_hour: 20, user: user3, latitude: 48.870620, longitude: 2.316765 )
-sozee4 = Sozee.new(sozee_of: "Céline Dion", sozee_name: "Céline la matrone", description: "blablablaaaaa bla bla blaaa blaaaaa", category: "Chanteur", price_per_hour: 1000, user: user4, latitude: 48.870764, longitude: 2.347361 )
-sozee5 = Sozee.new(sozee_of: "Stromae", sozee_name: "Stromi le sosie", description: "blablablaaaaa bla bla blaaa blaaaaa alors on danse", category: "Politique", price_per_hour: 100, user: user5, latitude: 48.843295, longitude: 2.326514 )
-sozee6 = Sozee.new(sozee_of: "Emmanuel Macron", sozee_name: "Micron", description: "C'est de la poudre de perlinpinpin", category: "Politique", price_per_hour: 1500, user: user6, latitude: 48.831118, longitude: 2.354568 )
-sozee7 = Sozee.new(sozee_of: "Jean-Vincent Placé", sozee_name: "Emmanuel", description: "Prêt à mettre de l'action dans vos soirées... ", category: "Acteur", price_per_hour: 20, user: user7, latitude: 48.885906, longitude: 2.294265 )
-sozee8 = Sozee.new(sozee_of: "Brigitte Macron", sozee_name: "Bribri", description: "blablablaaaaa bla bla blaaa blaaaaa", category: "Première Dame", price_per_hour: 7900, user: user8, latitude: 48.838736, longitude: 2.378595 )
-sozee9 = Sozee.new(sozee_of: "Booked_sozee", sozee_name:"Jesuisbooképar:no_booking_user", description: "blablablaaaaa bla bla blaaa blaaaaa", category: "Première Dame", price_per_hour: 7900, user: user9, latitude: 48.899085, longitude: 2.359328 )
+sozee1 = Sozee.new(sozee_of: "Lionel Messi", sozee_name: "Leonard Messi", description: "Sosie officiel de la pulga, j'imite son regard attachant et son accent à la perfection mais je ne touche pas le ballon.", category: "Sportif", price_per_hour: 1000, user: user1, latitude: 48.870299, longitude: 2.389295 )
+sozee2 = Sozee.new(sozee_of: "Jésus", sozee_name: "Juste Jésus", description: "Pour ambiancer vos évènements, rien de mieux qu'un verre avec Jésus !", category: "Personnage historique", price_per_hour: 10, user: user2, latitude: 48.865032, longitude: 2.379843 )
+sozee3 = Sozee.new(sozee_of: "Johnny Depp", sozee_name: "Germain Depp", description: "Elu 3 fois meilleur Jack Sparrow de France. Prêt à mettre de l'action dans vos soirées !", category: "Acteur/ Actrice", price_per_hour: 20, user: user3, latitude: 48.870620, longitude: 2.316765 )
+sozee4 = Sozee.new(sozee_of: "Céline Dion", sozee_name: "Céline D'yon", description: "J'irai chercher ton cœur si tu l'emportes ailleurs
+Même si dans tes danses d'autres dansent tes heures
+J'irai chercher ton âme dans les froids, dans les flammes
+Je te jetterai des sorts pour que tu m'aimes encore
+", category: "Chanteur / Chanteuse", price_per_hour: 1000, user: user4, latitude: 48.870764, longitude: 2.347361 )
+sozee5 = Sozee.new(sozee_of: "Kim Jong Un", sozee_name: "Kim Jong Deux", description: "Instaurez une dictature dans votre soirée ! Je vous propose également mes services d'artificier.", category: "Homme/Femme Politique", price_per_hour: 100, user: user5, latitude: 48.843295, longitude: 2.326514 )
+sozee6 = Sozee.new(sozee_of: "Michael Jackson", sozee_name: "Michel Jacquesson", description: "Sosie officiel de MJ à Paris depuis 1998. Je suis également interprète et danseur.", category: "Chanteur/ Chanteuse", price_per_hour: 1500, user: user6, latitude: 48.831118, longitude: 2.354568 )
+sozee7 = Sozee.new(sozee_of: "Ryan Gosling", sozee_name: "Rayan Gosselin", description: "Prêt à mettre de l'action dans vos soirées... NB : Je ne fais que des EVJF!", category: "Acteur/ Actrice", price_per_hour: 20, user: user7, latitude: 48.885906, longitude: 2.294265 )
+sozee8 = Sozee.new(sozee_of: "Nelson Mandela", sozee_name: "Nelson Mandella", description: "Sosie de Mandela depuis sa sortie de Robben Island, j'interprète également Dieu à l'occasion (voir tarifs divens en détail).", category: "Acteur/Actrice", price_per_hour: 790, user: user8, latitude: 48.838736, longitude: 2.378595 )
 
 puts "adding photos to sozees..."
-sozee1.remote_photo_url = 'http://www.sosiestar.com/wp-content/uploads/2015/07/sosie-metisse-de-francois-hollande.jpg'
-sozee2.remote_photo_url = 'https://img2.telestar.fr/var/telestar/storage/images/media/images/2014/photos/johnny-hallyday/hallyday_013/203099-1-fre-FR/hallyday_013_width1024.jpg'
-sozee3.remote_photo_url = 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/5/000/1aa/260/3e293d1.jpg'
+sozee1.remote_photo_url = 'http://res.cloudinary.com/dvwo2ow8v/image/upload/v1512126400/sosie-messi-iran-solo-1170x658_juihgs.jpg'
+sozee2.remote_photo_url = 'https://cdn.mpasho.co.ke/wp-content/uploads/2016/11/Daniel-Christos-1778.jpg'
+sozee3.remote_photo_url = 'http://4.bp.blogspot.com/-Unqrgt17hp0/UqjZYE5UOBI/AAAAAAAAAJA/1UT9BpO0tt8/s1600/IMG_2486.JPG'
 sozee4.remote_photo_url = 'http://www.starway-agency.com/flo/album1photo1.jpg'
-sozee5.remote_photo_url = 'http://www.paris-normandie.fr/documents/10157/0/mod01/image_content_general_17845557_20141028161856.jpg'
-sozee6.remote_photo_url = 'https://www.francetvinfo.fr/image/75e5y9n5e-6c18/578/598/12338640.jpg'
-sozee7.remote_photo_url = 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/AAEAAQAAAAAAAA0fAAAAJDc0Nzk1ZTcyLWQwZjItNDhiMi1iMzM4LTEwMGNkYzE3MzYxMA.jpg'
-sozee8.remote_photo_url = 'https://img1.closermag.fr/var/closermag/storage/images/1/2/5/6/8/12568759/kim-kardashian-toujours-aussi-traumatisee-par-son-agression-paris-cesse-pleurer_exact540x405_l.jpg'
-sozee9.remote_photo_url = 'https://www.google.fr/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&ved=0ahUKEwiggou4uebXAhXrAcAKHZrhBK8QjBwIBA&url=https%3A%2F%2Fwww.shareicon.net%2Fdownload%2F2016%2F09%2F01%2F822711_user_512x512.png&psig=AOvVaw34yIMkraE4A46itKBY8OSA&ust=1512136463748400'
+sozee5.remote_photo_url = 'https://i.ytimg.com/vi/RlOaxe5C2nE/maxresdefault.jpg'
+sozee6.remote_photo_url = 'https://i.ytimg.com/vi/dIzvdEGqg14/maxresdefault.jpg'
+sozee7.remote_photo_url = 'http://bravo.ly/2ALDLsq'
+sozee8.remote_photo_url = 'http://www.trbimg.com/img-59301dcd/turbine/la-et-entertainment-news-updates-june-a-star-is-born-morgan-freeman-turns-80-1496268967'
 
 puts "saving sozees..."
-sozee1.save
-sozee2.save
-sozee3.save
-sozee4.save
-sozee5.save
-sozee6.save
-sozee7.save
-sozee8.save
-sozee9.save
+sozee1.save!
+sozee2.save!
+sozee3.save!
+sozee4.save!
+sozee5.save!
+sozee6.save!
+sozee7.save!
+sozee8.save!
 
 puts "Seeds done!"

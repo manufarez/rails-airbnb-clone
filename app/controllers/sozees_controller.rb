@@ -18,6 +18,9 @@ class SozeesController < ApplicationController
       {
         lat: sozee.latitude,
         lng: sozee.longitude,
+        # icon: sozee.photo,
+        # height: 20%
+
         infoWindow: { content: render_to_string(partial: "/sozees/map_box", locals: { sozee: sozee }) }
       }
     end

@@ -1,7 +1,7 @@
 <% unless current_user.sozees.empty? %>
 
   <div class="container text-center">
-    <div class="profile">
+    <div class="dashboard">
       <div class="card main-content">
         <div class="card-content">
           <%= cl_image_tag current_user.photo, class: "dashboard-avatar" %>
@@ -9,41 +9,61 @@
           <p><%= current_user.city %></p>
           <a href="#" class="btn btn-primary btn-lg">Get in touch</a>
         </div>
+          <p><%= link_to "Supprimer mon annonce", sozee_path(current_user.sozee_id),
+              method: :delete,
+              data: { confirm: "Are you sure?" } %>
+          </p>
       </div>
 
       <div class="card description">
         <div class="views">
-          <div class="choice mybookings">Mes Bookings</div>
+          <div class="choice mybookings">Mes réservations</div>
           <div class="choice myclients">Mes invitations</div>
         </div>
         <hr>
         <div class="view-content">
           <!-- afficher les demandes de réservation de la part des autres users-->
-          <p>Demandes en cours :</p>
             <!-- <User> souhaite vous réserver du <> au <> -->
             <% current_user.sozees.first.bookings.each do |booking| %>
-              <p><%= booking.user.username%> souhaite vous réserver le <%= Date.parse(booking.day).strftime("%m/%d/%Y") %> de <%= booking.end_time%>h. à <%= booking.end_time%>h.</p>
+              <div class="message">
+                <p class="bookind-date"><%= booking.created_at %></p>
+                 <%= cl_image_tag booking.user.photo, class: "avatar-user" %>
+                <div class="message-name">
+                  <h3 id="username"><%= booking.user.username %></h3>
+                  <p id="city"><%= booking.user.city %></p>
+                </div>
+                <div class="message-body">
+                  <p><strong>Précisions</strong></p>
+                  <p><%= booking.bookingmessage %></p>
+                </div>
+                <div class="slot">
+                    <p><%= Time.parse(booking.day).strftime("%m/%d/%Y") %>, from <%= booking.start_time %>h to <%= booking.end_time %>h.</p>
+                </div>
+                <div class="message-status">
+                  <ul class= "list-inline">
+                    <li>
+                      <%= simple_form_for [current_user.sozees.first, booking] do |f| %>
+                        <%= f.input :status, as: :hidden, input_html: { value: "Acceptée" } %>
+                        <%= f.button :submit, 'Accepter', class: "btn  btn-success btn-xs" %>
+                      <% end %>
+                      </li>
+                    <li>
+                      <%= simple_form_for [current_user.sozees.first, booking] do |f| %>
+                        <%= f.input :status, as: :hidden, input_html: { value: "Refusée" } %>
+                        <%= f.button :submit, 'Refuser', class: "btn btn-danger btn-xs"  %>
+                      <% end %>
+                    </li>
+                  </ul>
+                </div>
+                  <div class="price">
+                    <p>
+                      <% total_hour = booking.end_time.to_i - booking.start_time.to_i %>
+                      Total TTC : <%= total_hour %>h * <%= booking.sozee.price_per_hour.to_i %> = <%= total_hour * booking.sozee.price_per_hour.to_i %>€.
+                    </p>
+                  </div>
+              </div>
+
               <!-- Donner la possibilité d'accepter ou de refuser une demande -->
-
-              <%= simple_form_for [current_user.sozees.first, booking] do |f| %>
-                <%= f.input :status, as: :hidden, input_html: { value: "Acceptée" } %>
-                <%= f.button :submit, 'Accepter' %>
-              <% end %>
-
-              <%= simple_form_for [current_user.sozees.first, booking] do |f| %>
-                <%= f.input :status, as: :hidden, input_html: { value: "Refusée" } %>
-                <%= f.button :submit, 'Refuser' %>
-              <% end %>
-
-              <%= link_to "Supprimer la demande", sozee_booking_path(booking.sozee_id, booking),
-              method: :delete,
-              data: { confirm: "Are you sure?" } %>
-              </p>
-
-              <p><%= link_to "Supprimer mon annonce", sozee_path(booking.sozee_id),
-                  method: :delete,
-                  data: { confirm: "Are you sure?" } %>
-              </p>
 
             <% end %>
           <!-- Donner la possibilité de supprimer son profil de Sozee -->
@@ -59,3 +79,24 @@
       </div>
     </div>
   </div>
+</div>
+
+
+<!--               <div class="message">
+                <img class="avatar-large" src="https://kitt.lewagon.com/placeholder/users/gabriel-dehan">
+                <div class="message-name">
+                  <h3>Gab Dehan</h3>
+                  <p>10/07/17</p>
+                </div>
+                <div class="message-body">
+                  <p><strong>I am not sure yet!</strong></p>
+                  <p>
+                    I am not sure yet! I might be in Shanghai at this moment... Can I tell you later?
+                  </p>
+                </div>
+                <div class="message-status">
+                  <p class="status pending">Pending</p>
+                  <p class="price">€345</p>
+                </div>
+              </div> -->
+

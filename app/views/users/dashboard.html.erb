@@ -4,74 +4,114 @@
     <div class="dashboard">
       <div class="card main-content">
         <div class="card-content">
-          <%= cl_image_tag current_user.photo, class: "dashboard-avatar" %>
-          <h2><%= current_user.username %></h2>
-          <p><%= current_user.city %></p>
-          <a href="#" class="btn btn-primary btn-lg">Get in touch</a>
+          <div class="avatar">
+            <%= cl_image_tag current_user.photo, class: "dashboard-avatar" %>
+          </div>
+          <div class="username">
+            <h2><%= current_user.username %></h2>
+          </div>
+          <div class="city">
+            <p><%= current_user.city %></p>
+          </div>
+          <div class="city">
+            <p><%= current_user.email %></p>
+          </div>
         </div>
 
       </div>
 
       <div class="card description">
         <div class="views">
-          <div class="choice mybookings">Mes réservations</div>
-          <div class="choice myclients">Mes invitations</div>
+          <div id="btnmesreservations" class="choice">Mes réservations</div>
+          <div id="btnmesinvitations" class="choice">Mes invitations</div>
         </div>
-        <hr>
-        <div class="view-content">
-          <!-- afficher les demandes de réservation de la part des autres users-->
-            <!-- <User> souhaite vous réserver du <> au <> -->
-            <% current_user.sozees.first.bookings.each do |booking| %>
-              <div class="message">
-                <p class="bookind-date"><%= booking.created_at %></p>
-                 <%= cl_image_tag booking.user.photo, class: "avatar-user" %>
-                <div class="message-name">
-                  <h3 id="username"><%= booking.user.username %></h3>
-                  <p id="city"><%= booking.user.city %></p>
-                </div>
-                <div class="message-body">
-                  <p><strong>Précisions</strong></p>
-                  <p><%= booking.bookingmessage %></p>
-                </div>
-                <div class="slot">
-                    <p><%= Time.parse(booking.day).strftime("%m/%d/%Y") %>, from <%= booking.start_time %>h to <%= booking.end_time %>h.</p>
-                </div>
-                <div class="message-status">
-                  <ul class= "list-inline">
-                    <li>
-                      <%= simple_form_for [current_user.sozees.first, booking] do |f| %>
-                        <%= f.input :status, as: :hidden, input_html: { value: "Acceptée" } %>
-                        <%= f.button :submit, 'Accepter', class: "btn  btn-success btn-xs" %>
-                      <% end %>
-                      </li>
-                    <li>
-                      <%= simple_form_for [current_user.sozees.first, booking] do |f| %>
-                        <%= f.input :status, as: :hidden, input_html: { value: "Refusée" } %>
-                        <%= f.button :submit, 'Refuser', class: "btn btn-danger btn-xs"  %>
-                      <% end %>
-                    </li>
+        <div class="views-container">
+          <div id="reservations" class="view-content">
+            test
+          </div>
+          <div id="invitations" class="view-content">
+            <!-- afficher les demandes de réservation de la part des autres users-->
+              <!-- <User> souhaite vous réserver du <> au <> -->
+              <% current_user.sozees.first.bookings.each do |booking| %>
+                <div class="labels">
+                  <ul class="labelslist list-inline">
+                    <li class="label-blank"><p><strong>En date du</strong></p></li>
+                    <li class="label-user"><p><strong>Votre hôte</strong></p></li>
+                    <li class="label-precisions"><p><strong>Précisions</strong></p></li>
+                    <li class="label-creneau"><p><strong>Créneau</strong></p></li>
+                    <li class="label-status"><p><strong>Statut de la demande</strong></p></li>
+                    <li class="label-price"><p><strong>Devis</strong></p></li>
                   </ul>
                 </div>
-                  <div class="price">
-                    <p>
-                      <% total_hour = booking.end_time.to_i - booking.start_time.to_i %>
-                      Total TTC : <%= total_hour %>h * <%= booking.sozee.price_per_hour.to_i %> = <%= total_hour * booking.sozee.price_per_hour.to_i %>€.
-                    </p>
+                <div class="message">
+                  <p class="bookind-date">
+                    <%= Time.zone.parse(booking.created_at.to_s).strftime("%d/%m/%Y") %></p>
+                  <div class="message-name">
+                    <div class="profilepic">
+                      <%= cl_image_tag booking.user.photo, class: "avatar-user" %>
+                    </div>
+                    <div class="userinfos">
+                      <h3 id="username"><%= booking.user.username %></h3>
+                      <p id="city"><%= booking.user.city %></p>
+                    </div>
                   </div>
-              </div>
+                  <div class="message-body">
 
-              <!-- Donner la possibilité d'accepter ou de refuser une demande -->
+                    <p class="content"><%= booking.bookingmessage %></p>
+                  </div>
+                  <div class="message-slot">
+                      <p><%= booking.start_time %>h à <%= booking.end_time %>h.</p>
+                      <p><%= Time.parse(booking.day).strftime("%d/%m/%Y") %></p>
+                  </div>
+                  <div class="message-status">
+
+                    <% if booking.status == 'Acceptée' %>
+                      <div class="status">
+                        <p><%= booking.status %></p>
+                      </div>
+                    <% elsif booking.status == "Refusée" %>
+                      <div class="status">
+                        <p><%= booking.status %></p>
+                      </div>
+                    <% else %>
+                      <ul class= "list-inline">
+                        <li>
+                          <%= simple_form_for [current_user.sozees.first, booking] do |f| %>
+                            <%= f.input :status, as: :hidden, input_html: { value: "Acceptée" } %>
+                            <%= f.button :submit, 'Accepter', class: "btn  btn-success btn-xs" %>
+                          <% end %>
+                          </li>
+                        <li>
+                          <%= simple_form_for [current_user.sozees.first, booking] do |f| %>
+                            <%= f.input :status, as: :hidden, input_html: { value: "Refusée" } %>
+                            <%= f.button :submit, 'Refuser', class: "btn btn-danger btn-xs"  %>
+                          <% end %>
+                        </li>
+                      </ul>
+                    <% end %>
+
+                    </div>
+
+                    <div class="message-price">
+                      <p>
+                        <% total_hour = booking.end_time.to_i - booking.start_time.to_i %>
+                        <%= total_hour * booking.sozee.price_per_hour.to_i %>€</p>
+                      <p>(<%= total_hour %>h * <%= booking.sozee.price_per_hour.to_i %>€/h)
+                      </p>
+                    </div>
+                </div>
+
+                <!-- Donner la possibilité d'accepter ou de refuser une demande -->
+
+              <% end %>
+            <!-- Donner la possibilité de supprimer son profil de Sozee -->
+            <!-- mes reservations en tant que user -->
+
+            <% else %>
 
             <% end %>
-          <!-- Donner la possibilité de supprimer son profil de Sozee -->
-          <!-- mes reservations en tant que user -->
 
-      <% else %>
-        <h3>Mon tableau de bord</h3>
-          <h4> Mes réservations </h4>
-           <!--  <p>Date : du <%= current_user.bookings.last.starts_at%> au <%= current_user.bookings.last.ends_at%> </p>
-            <p>Statut : en attente d'acceptation du sozee </p> -->
-       <% end %>
+        </div>
 
         </div>
       </div>

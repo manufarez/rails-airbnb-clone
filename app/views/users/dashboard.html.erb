@@ -1,9 +1,8 @@
-<% unless current_user.sozees.empty? %>
-
   <div class="container text-center">
     <div class="dashboard">
       <div class="card main-content">
         <div class="card-content">
+          <% if !current_user.nil? %>
           <div class="avatar">
             <%= cl_image_tag current_user.photo, class: "dashboard-avatar" %>
           </div>
@@ -13,6 +12,7 @@
           <div class="city">
             <p><%= current_user.city %></p>
           </div>
+          <% end %>
         </div>
 
       </div>
@@ -89,6 +89,8 @@
         </div>
         <div class="views-container">
           <div id="invitations" class="view-content">
+            <% unless current_user.sozees.empty? %>
+
             <!-- afficher les demandes de réservation de la part des autres users-->
               <!-- <User> souhaite vous réserver du <> au <> -->
               <% current_user.sozees.first.bookings.each do |booking| %>
@@ -159,6 +161,7 @@
                       </p>
                     </div>
                 </div>
+            <% end %>
 
                 <!-- Donner la possibilité d'accepter ou de refuser une demande -->
 
@@ -168,6 +171,3 @@
       </div>
     </div>
   </div>
-<% end %>
-
-

@@ -2,32 +2,34 @@
   <div class="container-show">
     <div class="card-show">
       <div id="card-show-image">
-        <%= cl_image_tag @sozee.photo, class: "card-user",  width: 500, height: 350, crop: :fill%>
+        <%= cl_image_tag @sozee.photo, class: "card-user", crop: :fill%>
       </div>
-      <h3 id="sozee-name-show"><%= @sozee.sozee_name %></h3>
-      <h3 id="sozee-price-show"><%= @sozee.price_per_hour %>€<p>de l'heure</p></h3>
-      <div class="wrapper-sozee-show">
-        <div class="sozee-infos-show">
-          <p>Sozee de <%= @sozee.sozee_of %></p>
+      <div class="card-show-infos">
+        <div id="first-element-card" class="flexbox">
+          <div>
+            <h3><%= @sozee.sozee_name %></h3>
+            <p>Sozee de <%= @sozee.sozee_of %></p>
+          </div>
+          <div>
+            <h3 id="sozee-price-show"><%= @sozee.price_per_hour %>€<p>de l'heure</p></h3>
+          </div>
         </div>
-        <div class="sozee-description-show">
+        <div class="text-center">
           <p>"<%= @sozee.description %>"</p>
         </div>
-        <div class="reviews">
-          <ul class="list-inline">
-            <li>
-              <h4><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-half-o" aria-hidden="true"></i></h4>
-              <p class="review-category"><strong>Ressemblance physique</strong></p>
-            </li>
-            <li>
-              <h4><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-half-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></h4>
-              <p class="review-category"><strong>Imitation</strong></p>
-            </li>
-            <li>
-              <h4><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></h4>
-              <p class="review-category" ><strong>Animation</strong></p>
-            </li>
-          </ul>
+        <div id="reviews-container">
+          <div>
+            <h4><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-half-o" aria-hidden="true"></i></h4>
+            <p class="review-category"><strong>Ressemblance physique</strong></p>
+          </div>
+          <div>
+            <h4><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-half-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></h4>
+            <p class="review-category"><strong>Imitation</strong></p>
+          </div>
+          <div>
+            <h4><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></h4>
+            <p class="review-category" ><strong>Animation</strong></p>
+          </div>
         </div>
       </div>
     </div>

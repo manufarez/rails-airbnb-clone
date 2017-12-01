@@ -16,7 +16,7 @@ User.destroy_all
 puts "creating users..."
 user1 = User.new(username: "Hollandus", city: "Paris", email: "manuel.farez@gmail.com", password: "mflewagon")
 user2 = User.new(username: "Jojo le routard", city: "Montpellier", email: "joffrey.cazalbou@gmail.com", password: "jclewagon")
-user3 = User.new(username: "Nicolas", city: "Paris", email: "nicolas.lizop@gmail.com", password: "nzlewagon")
+user3 = User.new(username: "Fabrice Barthez", city: "Paris", email: "nicolas.lizop@gmail.com", password: "nzlewagon")
 user4 = User.new(username: "Céline la matrone", city: "Tours", email: "francis.berger@gmail.com", password: "fblewagon")
 user5 = User.new(username: "Stromi le sosie", city: "Paris", email: "random.random@gmail.com", password: "rrlewagon")
 user6 = User.new(username: "Micron", city: "Paris", email: "random1.random1@gmail.com", password: "rr1lewagon")
@@ -52,7 +52,7 @@ user10.save
 puts "creating sozees..."
 sozee1 = Sozee.new(sozee_of: "François Hollande", sozee_name: "Hollandus", description: "Parce qu'il faut toujours un représentant politique dans vos cocktails dinatoires", category: "Politique", price_per_hour: 100, user: user1, latitude: 48.870299, longitude: 2.389295 )
 sozee2 = Sozee.new(sozee_of: "Johnny Hallyday", sozee_name: "Jojo le routard", description: "Ah que je t'aime, voix parfaite", category: "Chanteur", price_per_hour: 10, user: user2, latitude: 48.865032, longitude: 2.379843 )
-sozee3 = Sozee.new(sozee_of: "Fabien Barthez", sozee_name: "Nicolas", description: "Prêt à mettre de l'action dans vos soirées !", category: "Acteur", price_per_hour: 20, user: user3, latitude: 48.870620, longitude: 2.316765 )
+sozee3 = Sozee.new(sozee_of: "Fabien Barthez", sozee_name: "Fabrice Barthez", description: "Prêt à mettre de l'action dans vos soirées !", category: "Acteur", price_per_hour: 200, user: user3, latitude: 48.870620, longitude: 2.316765 )
 sozee4 = Sozee.new(sozee_of: "Céline Dion", sozee_name: "Céline la matrone", description: "blablablaaaaa bla bla blaaa blaaaaa", category: "Chanteur", price_per_hour: 1000, user: user4, latitude: 48.870764, longitude: 2.347361 )
 sozee5 = Sozee.new(sozee_of: "Stromae", sozee_name: "Stromi le sosie", description: "blablablaaaaa bla bla blaaa blaaaaa alors on danse", category: "Politique", price_per_hour: 100, user: user5, latitude: 48.843295, longitude: 2.326514 )
 sozee6 = Sozee.new(sozee_of: "Emmanuel Macron", sozee_name: "Micron", description: "C'est de la poudre de perlinpinpin", category: "Politique", price_per_hour: 1500, user: user6, latitude: 48.831118, longitude: 2.354568 )
@@ -63,7 +63,7 @@ sozee9 = Sozee.new(sozee_of: "Booked_sozee", sozee_name:"Jesuisbooképar:no_book
 puts "adding photos to sozees..."
 sozee1.remote_photo_url = 'http://www.sosiestar.com/wp-content/uploads/2015/07/sosie-metisse-de-francois-hollande.jpg'
 sozee2.remote_photo_url = 'https://img2.telestar.fr/var/telestar/storage/images/media/images/2014/photos/johnny-hallyday/hallyday_013/203099-1-fre-FR/hallyday_013_width1024.jpg'
-sozee3.remote_photo_url = 'https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/5/000/1aa/260/3e293d1.jpg'
+sozee3.remote_photo_url = 'http://res.cloudinary.com/dvwo2ow8v/image/upload/v1512126403/le-sosie-officiel-de-fabien-barthez-dit-wow-wow-wow_62138_wide_pntgj9.jpg'
 sozee4.remote_photo_url = 'http://www.starway-agency.com/flo/album1photo1.jpg'
 sozee5.remote_photo_url = 'http://www.paris-normandie.fr/documents/10157/0/mod01/image_content_general_17845557_20141028161856.jpg'
 sozee6.remote_photo_url = 'https://www.francetvinfo.fr/image/75e5y9n5e-6c18/578/598/12338640.jpg'

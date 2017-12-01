@@ -1,7 +1,9 @@
-console.log("hello");
+// console.log("hello");
 
 const invitations = document.getElementById("btnmesinvitations");
-invitations.addEventListener("click", showInvits)
+if (invitations) {
+  invitations.addEventListener("click", showInvits)
+}
 
 const invits = document.getElementById("invitations");
 const resa = document.getElementById("reservations");
@@ -9,21 +11,29 @@ const resa = document.getElementById("reservations");
 document.addEventListener("DOMContentLoaded", showInvits)
 
 function showInvits() {
-  console.log("hello1");
-
+  // console.log("hello1");
+  if (invits) {
   invits.classList.remove("hidden");
+}
+  if (resa) {
   resa.classList.add("hidden");
-
+}
 };
 
 
 const reservations = document.getElementById("btnmesreservations");
-reservations.addEventListener("click", showReserv)
+if (invitations) {
+  reservations.addEventListener("click", showReserv)
+}
 
 function showReserv() {
-  console.log("hello2");
+  // console.log("hello2");
+  if (resa) {
     resa.classList.remove("hidden");
+}
+  if (invits) {
     invits.classList.add("hidden");
+  }
 };
 
 

@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-around;
   margin-top: 15px;
-  height: calc(96vh - 70px);
 }
 
 .card-show {
@@ -10,9 +9,6 @@
   flex: 0 0 58%;
   background-color: white;
   box-shadow: 1px 1px 2px rgba(150, 150, 150, 0.7);
-  padding-top: 80px;
-  padding-left: 60px;
-  padding-right: 60px;
 } p {
   margin: 0;
   margin-bottom: 10px;
@@ -20,53 +16,31 @@
 }
 
 #card-show-image {
-  padding: 0 25px;
-  padding-bottom: 10px;
-}
-
-#sozee-name-show {
-  position: absolute;
-  top: 15px;
-  left: 45px;
-  font-weight: lighter;
-  margin: 0 10px;
-  margin-top: 15px;
 }
 
 #sozee-price-show {
-  position: absolute;
-  top: 5px;
-  right: 48px;
   margin: 0 10px;
   margin-top: 15px;
 }
 
 .wrapper-sozee-show {
-  position: relative;
 }
 
 .sozee-infos-show {
-  position: absolute;
-  top: -40px;
-  right: 30px;
   font-size: 13px;
-  color: white;
 }
 
 .reviews {
-  position: absolute;
-  top: -35px;
-  right: 26px;
   margin-top: 15px;
 } h4 {
   margin-top: 0;
   margin-bottom: 0;
-  color: #FED130;
-  font-size: 22px;
+  color: #496DF4;
+  font-size: 20px;
 }
 
 .review-category {
-  font-size: 13px;
+  font-size: 9px;
   margin-left: 5px;
 }
 
@@ -75,10 +49,9 @@ li {
 }
 
 .sozee-description-show {
-  position: absolute;
-  top: 60px;
-  left: 30px;
-  text-align: center;
+  margin-top: 80px;
+  margin-left: 30px;
+
 }
 .info-show {
   position: relative;
@@ -86,15 +59,20 @@ li {
   align-items: center;
   background-color: white;
   box-shadow: 1px 1px 2px rgba(150, 150, 150, 0.7);
-  padding: 10px 50px;
+  padding: 10px 80px;
+  font-size: 14px;
+  .form-control {
+    font-size: 14px;
+  }
 }
 
 #title-info-show {
   position: absolute;
-  top: 0px;
-  right: 20px;
+  top: 8px;
+  right: 50px;
   font-weight: lighter;
   margin: 25px 10px;
+  font-size: 25px;
 }
 
 .form-container-show {
@@ -103,19 +81,60 @@ li {
 
 .booking-info-show {
   position: absolute;
-  top: 20px;
-  left: 18px;
+  top: 10px;
+  left: 19px;
   font-size: 30px;
 }
 
 #new-booking-title {
   position: absolute;
-  top: 8px;
-  right: 20px;
-  font-size: 30px;
+  top: 23px;
+  left: 19px;
+  font-size: 25px;
+  font-weight: lighter;
 }
 
 .new-booking-form {
   margin-top: 85px;
 }
 
+#mon-annonce {
+  position: absolute;
+  top: 60px;
+  left: 20px;
+}
+
+#gerer-mon-annonce {
+  position: absolute;
+  top: 120px;
+  left: 20px;
+}
+
+.sozee-own-annonce {
+  background-color: red;
+  border: 3px solid red;
+}
+
+#first-element-card {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 25px;
+  margin-bottom: 25px;
+  h3 {
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-weight: lighter;
+  }
+  #sozee-price-show {
+    margin-top: 0;
+  }
+}
+#reviews-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  margin: 50px 0;
+}

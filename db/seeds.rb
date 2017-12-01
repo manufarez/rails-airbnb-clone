@@ -55,7 +55,7 @@ Je te jetterai des sorts pour que tu m'aimes encore
 sozee5 = Sozee.new(sozee_of: "Kim Jong Un", sozee_name: "Kim Jong Deux", description: "Instaurez une dictature dans votre soirée ! Je vous propose également mes services d'artificier.", category: "Homme/Femme Politique", price_per_hour: 100, user: user5, latitude: 48.843295, longitude: 2.326514 )
 sozee6 = Sozee.new(sozee_of: "Michael Jackson", sozee_name: "Michel Jacquesson", description: "Sosie officiel de MJ à Paris depuis 1998. Je suis également interprète et danseur.", category: "Chanteur/ Chanteuse", price_per_hour: 1500, user: user6, latitude: 48.831118, longitude: 2.354568 )
 sozee7 = Sozee.new(sozee_of: "Ryan Gosling", sozee_name: "Rayan Gosselin", description: "Prêt à mettre de l'action dans vos soirées... NB : Je ne fais que des EVJF!", category: "Acteur/ Actrice", price_per_hour: 20, user: user7, latitude: 48.885906, longitude: 2.294265 )
-sozee8 = Sozee.new(sozee_of: "Nelson Mandela", sozee_name: "Nelson Mandella", description: "Sosie de Mandela depuis sa sortie de Robben Island, j'interprète également Dieu à l'occasion (voir tarifs divens en détail).", category: "Acteur/Actrice", price_per_hour: 790, user: user8, latitude: 48.838736, longitude: 2.378595 )
+sozee8 = Sozee.new(sozee_of: "Nelson Mandela", sozee_name: "Nelson Mandella", description: "Sosie de Mandela depuis sa sortie de Robben Island, j'interprète également Dieu à l'occasion (voir tarifs divins en détail).", category: "Acteur/Actrice", price_per_hour: 790, user: user8, latitude: 48.838736, longitude: 2.378595 )
 
 puts "adding photos to sozees..."
 sozee1.remote_photo_url = 'http://res.cloudinary.com/dvwo2ow8v/image/upload/v1512126400/sosie-messi-iran-solo-1170x658_juihgs.jpg'

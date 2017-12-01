@@ -14,7 +14,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
     authorize @booking
     if @booking.save
-      redirect_to sozee_path(@sozee), notice: 'The booking was successfully created.'
+      redirect_to sozee_path(@sozee), notice: 'Votre demande de réservation a bien été envoyée.'
     else
       render :new
     end
@@ -29,14 +29,14 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @booking.update(booking_params)
     authorize @booking
-    redirect_to dashboard_path, notice: 'The booking was successfully updated.'
+    redirect_to dashboard_path, notice: 'Votre demande a bien été prise en compte.'
   end
 
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
     authorize @booking
-    redirect_to dashboard_path, notice: 'The booking was successfully deleted.'
+    redirect_to dashboard_path, notice: 'Votre demande de suppression a bien été prise en compte.'
   end
 
   private

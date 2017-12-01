@@ -2,7 +2,6 @@
   display: flex;
   justify-content: space-around;
   margin-top: 15px;
-  height: calc(96vh - 70px);
 }
 
 .card-show {
@@ -10,9 +9,6 @@
   flex: 0 0 58%;
   background-color: white;
   box-shadow: 1px 1px 2px rgba(150, 150, 150, 0.7);
-  padding-top: 15px;
-  padding-left: 50px;
-  padding-right: 50px;
 } p {
   margin: 0;
   margin-bottom: 10px;
@@ -20,42 +16,21 @@
 }
 
 #card-show-image {
-  padding: 0 25px;
-  padding-bottom: 10px;
-}
-
-#sozee-name-show {
-  position: absolute;
-  bottom: 190px;
-  left: 65px;
-  font-weight: lighter;
-  margin: 0 10px;
-  margin-top: 15px;
 }
 
 #sozee-price-show {
-  position: absolute;
-  bottom: 170px;
-  right: 65px;
   margin: 0 10px;
   margin-top: 15px;
 }
 
 .wrapper-sozee-show {
-  position: relative;
 }
 
 .sozee-infos-show {
-  position: absolute;
-  top: -40px;
-  left: 28px;
   font-size: 13px;
 }
 
 .reviews {
-  position: absolute;
-  top: 60px;
-  right: 80px;
   margin-top: 15px;
 } h4 {
   margin-top: 0;
@@ -138,4 +113,28 @@ li {
 .sozee-own-annonce {
   background-color: red;
   border: 3px solid red;
+}
+
+#first-element-card {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 25px;
+  margin-bottom: 25px;
+  h3 {
+    margin-left: 0;
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-weight: lighter;
+  }
+  #sozee-price-show {
+    margin-top: 0;
+  }
+}
+#reviews-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 40px;
+  margin: 50px 0;
 }

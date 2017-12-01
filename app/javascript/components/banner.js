@@ -2,7 +2,7 @@ import Typed from 'typed.js';
 
 function loadDynamicBannerText() {
   new Typed('#banner-typed-text', {
-    strings: ["Johnny", "Dave", "Brigitte Macron", "Bruce Willis"],
+    strings: ["Johnny", "François Hollande", "Brigitte Macron", "Bruce Willis", "Grégoire Margotton"],
     //typespeed plus t'augmente plus ca ralenti
     typeSpeed: 50,
     // backspacing speed

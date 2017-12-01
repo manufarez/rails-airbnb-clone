@@ -8,7 +8,7 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
     <% if user_signed_in? && current_user.sozees.empty? %>
       <!-- Links when logged in -->
-      <%= link_to "Devenir sozee", new_sozee_path, class: "navbar-wagon-item navbar-wagon-link devenir " %>
+      <%= link_to "Devenir sozee", new_sozee_path, class: "navbar-wagon-item navbar-wagon-link", id:"devenir" %>
       <!-- Avatar with dropdown menu -->
         <%= link_to dashboard_path, class: "navbar-wagon-item navbar-wagon-link" do %>
           <%= t(".profile", default: "Mon profil") %>

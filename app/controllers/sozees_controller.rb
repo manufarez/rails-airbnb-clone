@@ -4,8 +4,9 @@ class SozeesController < ApplicationController
   def index
     if params[:query].present?
       sql_query = " \
-        sozees.sozee_name @@ :query \
+        sozees.sozee_of @@ :query \
         OR sozees.category @@ :query \
+        OR sozees.sozee_name @@ :query \
         OR users.username @@ :query \
         OR users.city @@ :query \
       "

@@ -16,8 +16,8 @@ class SozeesController < ApplicationController
     @markers = @sozees.map do |sozee|
       {
         lat: sozee.latitude,
-        lng: sozee.longitude#,
-        # infoWindow: { content: render_to_string(partial: "/sozees/map_box", locals: { sozee: sozee }) }
+        lng: sozee.longitude,
+        infoWindow: { content: render_to_string(partial: "/sozees/map_box", locals: { sozee: sozee }) }
       }
     end
   end

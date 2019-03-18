@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-ruby '2.3.5'
+ruby '2.6.1'
 
 gem "geocoder"
 gem "pundit"
@@ -10,7 +10,7 @@ gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
 gem 'puma'
-gem 'rails', '5.1.4'
+gem 'rails', '5.2.2.1'
 gem 'redis'
 
 gem 'autoprefixer-rails'
